@@ -1,21 +1,22 @@
 We created this styleguide to act as a central location where we house a live inventory of  React UI components. Anyone working on the **Belong Hire** product is encouraged to stay familiar with this styleguide and help ensure that it is kept up-to-date.
 
 *Usage:*
-Currently the library is built and hosted as a TAR file that can be installed via npm/yarn.
+Currently the library ishosted on NPM as https://www.npmjs.com/org/belong-ui
 
-To install run
+To install a component run
 ```shell noeditor
-yarn install
+yarn install @belong-ui/<package name>
 ```
+Note: Used with [reset.css](https://meyerweb.com/eric/tools/css/reset/)
 
 Please import CSS styles via
 ```scss noeditor
-@import '';
+@import '/path__to__node_modules/@belong-ui/<package name>/dist/index.min.css';
 ```
 
 To use any component,
 ```js static
-import { Button } from 'belong-ui';
+import ComponentName from '@belong-ui/<package name>';
 ```
 
 
@@ -46,5 +47,3 @@ font-family: 'Whitney A', 'Whitney B', 'Whitney-Light';
 ```
 
 [Text Styles](https://app.zeplin.io/project/55f9265c05a5b5e51adaaa0f/screen/5900a613a158c00e0b36b9dc)
-
-Note: Used with [reset.css](https://meyerweb.com/eric/tools/css/reset/)
