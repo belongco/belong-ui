@@ -7,7 +7,7 @@ import _ from 'lodash';
 import './index.scss';
 
 /**
- * @example ./README.md
+ * @example ../README.md
  */
 export default class Button extends React.Component {
   static propTypes = {

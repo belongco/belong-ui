@@ -8,7 +8,7 @@ module.exports = {
       name: 'UI Components',
       components: () => ([
         './index.scss',
-        '../packages/button/index.js',
+        '../packages/button/src/index.js',
       ]),
     },
   ],

@@ -1,4 +1,4 @@
-@import '../../scss/index.scss';
+@import '../../../scss/index.scss';
 
 .blng-button {
   box-sizing: border-box;
@@ -11,8 +11,8 @@
   padding: 0px 25px;
   font-family: $font-family;
   color: $grey-11;
-  background-color: white;
-  background-image: linear-gradient(to bottom, white, $grey-1);
+  background-color: $white;
+  background-image: linear-gradient(to bottom, $white, $grey-1);
   border: solid 1px $grey-4;
   border-radius: 3px;
 

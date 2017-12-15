@@ -6,13 +6,13 @@ const webpack = require('webpack');
 
 function config(env) {
   const packageName = env.pkg;
-  const extractTextPlugin = new ExtractTextPlugin({ filename: `belong-ui.${packageName}.min.css`, allChunks: true });
+  const extractTextPlugin = new ExtractTextPlugin({ filename: 'index.min.css', allChunks: true });
 
   return {
-    entry: path.resolve(__dirname, `./packages/${packageName}/index.js`),
+    entry: path.resolve(__dirname, `./packages/${packageName}/src/index.js`),
     output: {
       path: path.resolve(__dirname, `./packages/${packageName}/dist/`),
-      filename: `belong-ui.${packageName}.min.js`,
+      filename: 'index.min.js',
       library: `belongUI${packageName}`,
       libraryTarget: 'umd',
     },

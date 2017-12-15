@@ -2,7 +2,8 @@
 	"scripts": {
 		"lint": "eslint --ext .jsx --ext js ./packages/",
 		"styleguide": "styleguidist server --config ./styleguide/config.js",
-		"styleguide:build": "styleguidist build --config ./styleguide/config.js"
+		"styleguide:build": "styleguidist build --config ./styleguide/config.js",
+		"publish:npm": "lerna exec --parallel yarn run build && lerna publish --skip-git --registry=https://registry.npmjs.org/"
 	},
 	"pre-commit": [
 		"lint"
@@ -40,5 +41,6 @@
 		"sass-loader": "6.0.6",
 		"style-loader": "^0.13.1",
 		"webpack": "^3.0.0"
-	}
+	},
+	"dependencies": {}
 }
