@@ -1,0 +1,119 @@
+@import '../../scss/index.scss';
+
+.blng-button {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 25px;
+  font-family: $font-family;
+  color: $grey-11;
+  background-color: white;
+  background-image: linear-gradient(to bottom, white, $grey-1);
+  border: solid 1px $grey-4;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+  }
+
+  &:active, &:focus {
+    background: $grey-1;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  &--size-small {
+    height: 30px;
+    line-height: 30px;
+  }
+
+  &--type-brand {
+    font-weight: 500;
+    background-color: $orange-5;
+    background-image: linear-gradient(to bottom, $orange-5, $orange-6);
+    border: solid 1px $orange-7;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+
+    &:active, &:focus {
+      background: $orange-6;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  &--type-primary {
+    font-weight: 500;
+    background-color: $blue-6;
+    background-image: linear-gradient(to bottom, $blue-6, $blue-7);
+    border: solid 1px $blue-8;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+
+    &:active, &:focus {
+      background: $blue-7;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  &--type-green {
+    font-weight: 500;
+    background-color: $green-6;
+    background-image: linear-gradient(to bottom, $green-6, $green-7);
+    border: solid 1px $green-8;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+
+    &:active, &:focus {
+      background: $green-7;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  &--type-warning {
+    font-weight: 500;
+    background-color: $red-6;
+    background-image: linear-gradient(to bottom, $red-6, $red-7);
+    border: solid 1px $red-8;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+
+    &:active, &:focus {
+      background: $red-7;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    &:hover {
+      box-shadow: none !important;
+      cursor: not-allowed;
+    }
+  }
+}
