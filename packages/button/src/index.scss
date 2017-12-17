@@ -2,7 +2,7 @@
 
 .blng-button {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: $standard-font-size;
   font-weight: normal;
   text-align: center;
   display: inline-block;
@@ -18,7 +18,7 @@
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    box-shadow: $box-shadow-button;
   }
 
   &:active, &:focus {
@@ -41,7 +41,7 @@
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+      box-shadow: $box-shadow-button;
     }
 
     &:active, &:focus {
@@ -60,7 +60,7 @@
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+      box-shadow: $box-shadow-button;
     }
 
     &:active, &:focus {
@@ -79,7 +79,7 @@
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+      box-shadow: $box-shadow-button;
     }
 
     &:active, &:focus {
@@ -98,7 +98,7 @@
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+      box-shadow: $box-shadow-button;
     }
 
     &:active, &:focus {
@@ -110,7 +110,7 @@
 
   &--disabled {
     cursor: not-allowed;
-    opacity: 0.6;
+    opacity: $opacity-disabled;
     &:hover {
       box-shadow: none !important;
       cursor: not-allowed;
