@@ -23,6 +23,7 @@ function config(env) {
       jquery: 'jquery',
       'prop-types': 'prop-types',
       'react-dom': 'react-dom',
+      'popper.js': 'popper.js',
     },
     resolveLoader: {
       moduleExtensions: ['-loader'],

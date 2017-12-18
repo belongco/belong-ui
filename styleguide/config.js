@@ -9,6 +9,7 @@ module.exports = {
       components: () => ([
         '../packages/button/src/index.js',
         '../packages/input/src/index.js',
+        '../packages/popover/src/index.js',
       ]),
     },
   ],

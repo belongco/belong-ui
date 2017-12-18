@@ -1,7 +1,7 @@
 {
-  "name": "@belong-ui/input",
+  "name": "@belong-ui/popover",
   "version": "0.0.5",
-  "description": "belong-ui: Basic Input/Textarea Component",
+  "description": "belong-ui: Popover Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
   "author": "vivek kaarthek",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "popper.js": "^1.12.5",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
     "react-dom": "16.0.0"
