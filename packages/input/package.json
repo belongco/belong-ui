@@ -1,7 +1,7 @@
 {
   "name": "@belong-ui/input",
-  "version": "0.0.5",
-  "description": "belong-ui: Basic Input/Textarea Component",
+  "version": "0.0.6",
+  "description": "belong-ui: Input Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
   "author": "vivek kaarthek",

@@ -1,13 +1,13 @@
 {
   "name": "@belong-ui/popover",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "belong-ui: Popover Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
   "author": "vivek kaarthek",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=input"
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=popover"
   },
   "dependencies": {
     "classnames": "^2.2.5",
