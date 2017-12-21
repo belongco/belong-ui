@@ -18,8 +18,10 @@ export default class Input extends React.Component {
       PropTypes.string,
       PropTypes.number,
     ]),
+    onKeyDown: PropTypes.func,
     onChange: PropTypes.func,
     onEnter: PropTypes.func,
+    onEscape: PropTypes.func,
     onBlur: PropTypes.func,
     onFocus: PropTypes.func,
     inputType: PropTypes.string,
@@ -35,6 +37,7 @@ export default class Input extends React.Component {
     onBlur: () => {},
     onFocus: () => {},
     onEnter: () => {},
+    onEscape: () => {},
   };
   state = {
     value: this.props.value,
@@ -60,8 +63,20 @@ export default class Input extends React.Component {
       return;
     }
 
+    if (this.props.isDisabled) {
+      return;
+    }
+
+    if (this.props.onKeyDown) {
+      this.props.onKeyDown(e);
+    }
+
     if (e.keyCode === keyCodes.ENTER) {
       this.props.onEnter(e.target.value);
+    }
+
+    if (e.keyCodes === keyCodes.ESCAPE) {
+      this.props.onEscape(e.target.value);
     }
   }
   onBlur = (e) => {

@@ -5,12 +5,13 @@ module.exports = {
       content: './README.md',
     },
     {
-      name: 'UI Components',
+      name: 'Core UI Components',
       components: () => ([
         '../packages/button/src/index.js',
         '../packages/input/src/index.js',
         '../packages/popover/src/index.js',
         '../packages/loader/src/index.js',
+        '../packages/suggestions/src/index.js',
       ]),
     },
   ],
