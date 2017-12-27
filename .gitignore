@@ -5,3 +5,5 @@ dist/
 **/dist/
 lerna-debug.log
 npm-error.log
+npm-debug.log
+**/npm-debug.log

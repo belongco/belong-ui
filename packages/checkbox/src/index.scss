@@ -1,0 +1,63 @@
+@import '../../../scss/index.scss';
+
+@keyframes ripple {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  33% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  66% {
+    transform: scale(4);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+.blng-checkbox {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background-color: $white;
+  box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px $grey-6;
+  margin: auto;
+  transition: all .2s ease;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: $white;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid $blue-3;
+    box-sizing: border-box;
+    transform: scale(0);
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &--checked {
+    background-color: $blue-6;
+    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    border: solid 1px $blue-8;
+    &::after {
+      animation-name: ripple;
+    }
+  }
+}

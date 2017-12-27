@@ -1,13 +1,13 @@
 {
-  "name": "@belong-ui/loader",
+  "name": "@belong-ui/checkbox",
   "version": "0.0.9",
-  "description": "belong-ui: Loader Component",
+  "description": "belong-ui: Checkbox Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
   "author": "vivek kaarthek",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=loader"
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=checkbox"
   },
   "dependencies": {
     "classnames": "^2.2.5",

@@ -2,6 +2,7 @@
 
 .blng {
   &-suggestions {
+    position: relative;
 
     &__suggestion {
       transition: all 0.2s ease;

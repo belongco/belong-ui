@@ -119,9 +119,9 @@ class SuggestionsWrap extends React.Component {
         )}
         {
           !_.isEmpty(this.props.messageIfEmpty) && _.isEmpty(suggestionElements) && !this.props.isLoading ? (
-            <p className="blng-suggestions__empty-message">
+            <div className="blng-suggestions__empty-message">
               {this.props.messageIfEmpty}
-            </p>
+            </div>
           ) : null
         }
       </div>
