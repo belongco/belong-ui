@@ -1,15 +1,16 @@
 {
-  "name": "@belong-ui/button",
+  "name": "@belong-ui/select-dropdown",
   "version": "0.0.11",
-  "description": "belong-ui: Basic Button Component",
+  "description": "belong-ui: Select Dropdown Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
   "author": "vivek kaarthek",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=button"
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=select-dropdown"
   },
   "dependencies": {
+    "@belong-ui/popover": "^0.0.11",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",

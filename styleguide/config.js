@@ -15,6 +15,12 @@ module.exports = {
         '../packages/suggestions/src/index.js',
       ]),
     },
+    {
+      name: 'Select/Dropdown UI Components',
+      components: () => ([
+        '../packages/select-dropdown/src/index.js',
+      ]),
+    },
   ],
   template: './template.html',
   webpackConfig: require('./webpack.styleguide.js'),

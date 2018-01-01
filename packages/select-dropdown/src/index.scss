@@ -1,0 +1,103 @@
+@import '../../../scss/index.scss';
+
+.blng {
+  &-select-dropdown {
+    display: inline-block;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &__text {
+      display: inline-block;
+      vertical-align: middle;
+      &--disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+    &__dropdown-icon {
+      display: inline-block;
+      padding: 0 5px;
+      vertical-align: middle;
+      i {
+        color: $grey-7;
+        font-size: 20px;
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      &--open {
+        i {
+          transform: rotate(180deg);
+        }
+      }
+      &--disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    &__content {
+      min-width: 200px;
+      background: #ffffff;
+      max-height: 300px;
+      overflow-y: auto;
+      border-radius: 3px;
+    }
+
+    &__dropdown-item {
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: $blue-1;
+      }
+      &:active {
+        background: $blue-3;
+      }
+    }
+
+    &--is-input {
+      font-size: 14px;
+      height: 40px;
+      border: 1px solid $grey-3;
+      background: $white;
+      line-height: 40px;
+      padding: 2px 10px;
+      padding-right: 2px;
+      border-radius: 3px;
+      box-sizing: border-box;
+      width: 100%;
+
+      .blng-popover__target {
+        float: right;
+        width: 34px;
+        height: 34px;
+        background-color: $grey-1;
+        background-image: linear-gradient(to bottom, white, $grey-1);
+        border-radius: 3px;
+        box-sizing: border-box;
+        color: $grey-11;
+        text-align: center;
+        border: solid 1px $grey-4;
+      }
+      .blng-select-dropdown__text {
+        position: relative;
+        top: -4px;
+        line-height: 1;
+        padding: 8px 0;
+      }
+      .blng-select-dropdown__dropdown-icon {
+        vertical-align: top;
+        line-height: 34px;
+      }
+      .blng-select-dropdown__dropdown-icon i {
+        font-size: 14px;
+        color: $grey-11;
+      }
+    }
+  }
+}
