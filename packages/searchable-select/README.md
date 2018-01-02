@@ -2,7 +2,17 @@
 Use this component for inputs where a value has to be selected from a vast array of options.
 
 ```js
-const suggestions = ['apple', 'orange', 'banana', 'mango', 'badam', 'grapes', 'pineapple', 'guava', 'pear'];
+const suggestions = [
+  { name: 'apple'},
+  { name: 'orange'},
+  { name: 'banana'},
+  { name: 'mango'},
+  { name: 'badam'},
+  { name: 'grapes'},
+  { name: 'pineapple'},
+  { name: 'guava'},
+  { name: 'pear'},
+];
 
 initialState = {
   searchValue: '',
@@ -23,7 +33,7 @@ initialState = {
 
     setTimeout(() => {
       const filteredSuggstions = suggestions.filter(suggestion => (
-        suggestion.indexOf(value) !== -1 || !value
+        suggestion['name'].indexOf(value) !== -1 || !value
       ));
 
       setState({ isLoading: false, filteredSuggstions });
@@ -31,12 +41,12 @@ initialState = {
   }}
   suggestions={state.filteredSuggstions}
   renderSelectedItem={() => (
-    state.selectedItem ? state.selectedItem : (<span>Select Fruit</span>)
+    state.selectedItem ? state.selectedItem['name'] : (<span>Select Fruit</span>)
   )}
+  suggestionsDisplayKey="name"
   searchPlaceholder="Search a Fruit"
   helpText="Search and Select a Fruit"
 />
-
 <br /><br />
 
 <SearchableSelect
@@ -49,7 +59,7 @@ initialState = {
     setState({ searchValue: newValue });
   }}
   renderSelectedItem={() => (
-    state.selectedItem ? state.selectedItem : (<span>Disabled Search</span>)
+    state.selectedItem ? state.selectedItem['name'] : (<span>Disabled Search</span>)
   )}
   searchPlaceholder="Search a Fruit"
   helpText="Search and Select a Fruit"

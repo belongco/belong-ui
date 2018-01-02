@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/select-dropdown",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "belong-ui: Select Dropdown Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
@@ -10,7 +10,7 @@
     "build": "webpack --config ../../webpack.lib.config.js --env.pkg=select-dropdown"
   },
   "dependencies": {
-    "@belong-ui/popover": "^0.0.14",
+    "@belong-ui/popover": "^0.0.15",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
