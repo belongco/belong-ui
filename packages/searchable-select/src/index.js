@@ -136,6 +136,7 @@ export default class SearchableSelect extends React.Component {
                       isLoading={this.props.isSearchLoading}
                       messageIfEmpty={this.props.messageIfNoSearchResults}
                       suggestionClassname="blng-searchable-select__suggestion"
+                      suggestionsDisplayKey={this.props.suggestionsDisplayKey}
                       onSuggestionClick={
                         (suggestion) => {
                           this.setState({ isOpen: false });
