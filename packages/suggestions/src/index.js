@@ -66,7 +66,7 @@ class SuggestionsWrap extends React.Component {
     className: PropTypes.string,
     isLoading: PropTypes.bool,
     suggestionClassname: PropTypes.string,
-    suggestionDisplayKey: PropTypes.string,
+    suggestionsDisplayKey: PropTypes.string,
     renderSuggestion: PropTypes.func,
     isDisabled: PropTypes.bool,
     onSuggestionClick: PropTypes.func,
@@ -86,7 +86,7 @@ class SuggestionsWrap extends React.Component {
   }
   render() {
     const suggestionElements = (this.context[SUGGESTIONS_CONTEXT].suggestions || []).map((suggestion, index) => {
-      const suggestionValue = _.isString(suggestion) ? suggestion : suggestion[this.props.suggestionDisplayKey];
+      const suggestionValue = _.isString(suggestion) ? suggestion : suggestion[this.props.suggestionsDisplayKey];
       const isSelected = index === this.context[SUGGESTIONS_CONTEXT].selectedIndex;
 
       return (
