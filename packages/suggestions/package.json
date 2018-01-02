@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/suggestions",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "belong-ui: suggestions Components",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
@@ -10,8 +10,8 @@
     "build": "webpack --config ../../webpack.lib.config.js --env.pkg=suggestions"
   },
   "dependencies": {
-    "@belong-ui/input": "^0.0.12",
-    "@belong-ui/loader": "^0.0.12",
+    "@belong-ui/input": "^0.0.13",
+    "@belong-ui/loader": "^0.0.13",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
