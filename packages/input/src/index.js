@@ -93,7 +93,7 @@ export default class Input extends React.Component {
 
     this.props.onFocus(e.target.value);
   }
-  focus = () => {
+  focus() {
     if (this.fieldNode && !this.props.isDisabled) {
       this.fieldNode.focus();
     }

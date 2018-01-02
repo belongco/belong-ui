@@ -19,6 +19,7 @@ module.exports = {
       name: 'Select/Dropdown UI Components',
       components: () => ([
         '../packages/select-dropdown/src/index.js',
+        '../packages/searchable-select/src/index.js',
       ]),
     },
   ],
