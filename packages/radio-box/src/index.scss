@@ -1,0 +1,69 @@
+@import '../../../scss/index.scss';
+
+@keyframes ripple {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  33% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  66% {
+    transform: scale(4);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+.blng-radiobox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  margin: auto;
+  transition: all .2s ease;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: $white;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid $blue-3;
+    box-sizing: border-box;
+    transform: scale(0);
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &--selected {
+    &::after {
+      animation-name: ripple;
+    }
+  }
+  &__circle {
+    background-color: $blue-6;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.7);
+  }
+}

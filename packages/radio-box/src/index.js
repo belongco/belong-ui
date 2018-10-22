@@ -8,11 +8,11 @@ import './index.scss';
 /**
  * @example ../README.md
  */
-function Checkbox({ isChecked, onClick }) {
+function RadioBox({ isSelected, onClick }) {
   return (
     <div
-      className={getClassNames('blng-checkbox', {
-        'blng-checkbox--checked': isChecked,
+      className={getClassNames('blng-radiobox', {
+        'blng-radiobox--selected': isSelected,
       })}
       onClick={() => {
         if (onClick) {
@@ -20,14 +20,14 @@ function Checkbox({ isChecked, onClick }) {
         }
       }}
     >
-      {isChecked ? <i className="fa fa-check"></i> : null}
+      {isSelected ? <div className="blng-radiobox__circle"></div> : null}
     </div>
   );
 }
 
-Checkbox.propTypes = {
-  isChecked: PropTypes.bool,
+RadioBox.propTypes = {
+  isSelected: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
-export default Checkbox;
+export default RadioBox;

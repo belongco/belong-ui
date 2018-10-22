@@ -16,22 +16,14 @@ function config(env) {
       library: `belongUI${packageName}`,
       libraryTarget: 'umd',
     },
-    externals: {
-      lodash: 'lodash',
-      classnames: 'classnames',
-      react: 'react',
-      jquery: 'jquery',
-      'prop-types': 'prop-types',
-      'react-dom': 'react-dom',
-      'popper.js': 'popper.js',
-    },
+    externals: /^(lodash|classnames|react|jquery|prop-types|react-dom|popper\.js|@belong-ui)/i,
     resolveLoader: {
       moduleExtensions: ['-loader'],
     },
     module: {
       rules: [{
         test: /\.jsx?$/,
-        exclude: /(node_modules|.\/flash\/frontend\/js\/libs\/)/,
+        exclude: /(node_modules)/,
         loader: 'babel',
         query: {
           plugins: [
@@ -39,7 +31,7 @@ function config(env) {
             'transform-react-remove-prop-types',
             'add-react-displayname',
           ],
-          presets: [['es2015', { modules: false }], 'stage-0', 'react'],
+          presets: ['es2015', 'stage-0', 'react'],
         },
       }, {
         test: /\.scss$/,
@@ -65,7 +57,6 @@ function config(env) {
           ],
         }),
       }],
-      noParse: /node_modules\/quill\/dist/,
     },
     plugins: [
       new webpack.optimize.UglifyJsPlugin({ minimize: true, sourceMap: false, compress: { warnings: false, drop_console: true } }),

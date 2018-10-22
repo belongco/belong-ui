@@ -1,19 +1,16 @@
 {
-  "name": "@belong-ui/suggestions",
+  "name": "@belong-ui/radiobox",
   "version": "0.1.1",
-  "description": "belong-ui: suggestions Components",
+  "description": "belong-ui: Radiobox Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
   "author": "vivek kaarthek",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=suggestions"
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=radio-box"
   },
   "dependencies": {
-    "@belong-ui/input": "^0.1.1",
-    "@belong-ui/loader": "^0.1.1",
     "classnames": "^2.2.5",
-    "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
     "react-dom": "16.0.0"
