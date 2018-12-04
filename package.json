@@ -1,5 +1,6 @@
 {
 	"scripts": {
+		"setup": "yarn install && lerna exec --parallel yarn install",
 		"lint": "eslint --ext .jsx --ext js ./packages/",
 		"styleguide": "styleguidist server --config ./styleguide/config.js",
 		"styleguide:build": "rm -rf build && rm -f index.html && styleguidist build --config ./styleguide/config.js && mv ./styleguide/styleguide/* ./",

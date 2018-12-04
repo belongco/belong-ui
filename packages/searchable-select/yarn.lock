@@ -2,27 +2,27 @@
 # yarn lockfile v1
 
 
-"@belong-ui/input@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.0.11.tgz#45f335c3293e1ccf1c872a5540c97131870aecec"
+"@belong-ui/input@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.1.tgz#4112c6aeef5e1175ad59bc80a600104403dfcf88"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     react "16.0.0"
     react-dom "16.0.0"
 
-"@belong-ui/loader@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.0.11.tgz#f80245e9c4aebb3e334b03fb50a0372d0d331aef"
+"@belong-ui/loader@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.1.tgz#3d1f8fadfb9223cb1cc7d74e1202cebd9aa7a30b"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     react "16.0.0"
     react-dom "16.0.0"
 
-"@belong-ui/popover@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@belong-ui/popover/-/popover-0.0.11.tgz#be5d99dccadbde26038ddd4c5d6b09c07fc85343"
+"@belong-ui/popover@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@belong-ui/popover/-/popover-0.1.1.tgz#1ac92a4ac83d7feb66eece251f8d470a27b1d239"
   dependencies:
     classnames "^2.2.5"
     popper.js "^1.12.5"
@@ -30,12 +30,12 @@
     react "16.0.0"
     react-dom "16.0.0"
 
-"@belong-ui/suggestions@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@belong-ui/suggestions/-/suggestions-0.0.11.tgz#382ce3466d001877773ba54f09d2595c46dc36a5"
+"@belong-ui/suggestions@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@belong-ui/suggestions/-/suggestions-0.1.1.tgz#8e340ce0e873ec48dc53f27a2844b1a817960459"
   dependencies:
-    "@belong-ui/input" "^0.0.11"
-    "@belong-ui/loader" "^0.0.11"
+    "@belong-ui/input" "^0.1.1"
+    "@belong-ui/loader" "^0.1.1"
     classnames "^2.2.5"
     lodash "^4.17.4"
     prop-types "^15.6.0"

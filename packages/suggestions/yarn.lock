@@ -2,18 +2,18 @@
 # yarn lockfile v1
 
 
-"@belong-ui/input@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.0.7.tgz#6327f7de4c2cd685d63f05edd0b96134d36f7450"
+"@belong-ui/input@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.1.tgz#4112c6aeef5e1175ad59bc80a600104403dfcf88"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     react "16.0.0"
     react-dom "16.0.0"
 
-"@belong-ui/loader@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.0.7.tgz#58e4c27b19d5995f7438aab5e6c0a6a3d4885c53"
+"@belong-ui/loader@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.1.tgz#3d1f8fadfb9223cb1cc7d74e1202cebd9aa7a30b"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"

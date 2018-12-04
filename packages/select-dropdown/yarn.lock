@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@belong-ui/popover@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@belong-ui/popover/-/popover-0.0.10.tgz#962a70b5fb1e13773df465c86f3d16228e1bff76"
+"@belong-ui/popover@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@belong-ui/popover/-/popover-0.1.1.tgz#1ac92a4ac83d7feb66eece251f8d470a27b1d239"
   dependencies:
     classnames "^2.2.5"
     popper.js "^1.12.5"
