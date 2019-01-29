@@ -11,6 +11,7 @@ module.exports = {
         '../packages/input/src/index.js',
         '../packages/popover/src/index.js',
         '../packages/loader/src/index.js',
+        '../packages/toggle/src/index.js',
         '../packages/checkbox/src/index.js',
         '../packages/radio-box/src/index.js',
         '../packages/suggestions/src/index.js',
