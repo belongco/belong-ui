@@ -105,7 +105,7 @@ class PopoverContent extends React.Component {
       transform: `translate3d(${refStyles.right}px, ${popoverStyles.top}px, 0)`,
     }], { isApplied: true }), ['isApplied']);
 
-    styles.transform = this.props.isOpen ? `${styles.transform} scale(1)` : `${styles.transform} scale(0.8)`;
+    styles.transform = this.props.isOpen ? `${styles.transform} scale(1)` : `${styles.transform} scale(0.9)`;
 
     return {
       visibility: this.props.isOpen ? 'visible' : 'hidden',
@@ -125,7 +125,7 @@ class PopoverContent extends React.Component {
     return (
       <div
         className={
-          getClassNames('blng-popover__content', this.props.className, {
+          getClassNames('blng-popover__content', `blng-popover__content--${this.props.placement}`, this.props.className, {
             'blng-popover__content--open': isOpen,
           })}
         ref={(ref) => {
@@ -165,6 +165,7 @@ PopoverOverlay.displayName = 'PopoverOverlay';
 class PopoverTarget extends React.Component {
   static displayName = 'PopoverTarget';
   static propTypes = {
+    isOpen: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.element,
   };
@@ -178,9 +179,13 @@ class PopoverTarget extends React.Component {
   targetNode = null;
 
   render() {
+    const { isOpen } = this.props;
+
     return (
       <div
-        className={getClassNames('blng-popover__target', this.props.className)}
+        className={getClassNames('blng-popover__target', this.props.className, {
+          'blng-popover__target--open': isOpen,
+        })}
         ref={(ref) => {
           this.targetNode = ref;
         }}
