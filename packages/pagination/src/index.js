@@ -8,7 +8,7 @@ class Page extends React.Component {
   static propTypes = {
     className: PropTypes.className,
     highlightedColor: PropTypes.string,
-    renderTag: PropTypes.func,
+    renderPage: PropTypes.func,
     onClick: PropTypes.func,
     pageNumber: PropTypes.number,
     activePage: PropTypes.number,
@@ -31,7 +31,7 @@ class Page extends React.Component {
   }
 
   render() {
-    const { className, highlightedColor, pageTag, pageNumber, activePage } = this.props;
+    const { className, highlightedColor, pageNumber, activePage } = this.props;
 
     return (
       <li
@@ -39,7 +39,7 @@ class Page extends React.Component {
         className={getClassNames('pagination-container__page', className)}
         onClick={e => this.handleClick(e)}
       >
-        {this.props.renderTag()}
+        {this.props.renderPage()}
       </li>
     );
   }
@@ -57,8 +57,8 @@ export default class Pagination extends React.Component {
     activePage: PropTypes.number,
     itemsCountPerPage: PropTypes.number,
     pageRangeDisplayed: PropTypes.number,
-    prevPageTag: PropTypes.string,
-    nextPageTag: PropTypes.string,
+    renderPrevPage: PropTypes.func,
+    renderNextPage: PropTypes.func,
   };
 
   static defaultProps = {
@@ -66,8 +66,6 @@ export default class Pagination extends React.Component {
     itemsCountPerPage: 10,
     pageRangeDisplayed: 5,
     activePage: 1,
-    prevPageTag: 'fa fa-chevron-left',
-    nextPageTag: 'fa fa-chevron-right',
   };
 
   buildPages() {
@@ -78,8 +76,6 @@ export default class Pagination extends React.Component {
       itemsCountPerPage,
       pageRangeDisplayed,
       activePage,
-      prevPageTag,
-      nextPageTag,
       totalItemsCount,
       onChange,
     } = this.props;
@@ -99,7 +95,7 @@ export default class Pagination extends React.Component {
           key={i}
           pageNumber={i}
           activePage={this.props.activePage}
-          renderTag={() => (
+          renderPage={() => (
             <span>{i}</span>
           )}
           hasPreviousPage={paginationInfo.hasPreviousPage}
@@ -118,8 +114,8 @@ export default class Pagination extends React.Component {
           pageNumber={paginationInfo.previousPage}
           activePage={this.props.activePage}
           onClick={onChange}
-          renderTag={() => (
-            <span><i className={prevPageTag}></i></span>
+          renderPage={() => (
+            <span>{this.props.renderPrevPage()}</span>
           )}
           isDisabled={!paginationInfo.hasPreviousPage}
         />,
@@ -135,8 +131,8 @@ export default class Pagination extends React.Component {
           pageNumber={paginationInfo.nextPage}
           activePage={this.props.activePage}
           onClick={onChange}
-          renderTag={() => (
-            <span><i className={nextPageTag}></i></span>
+          renderPage={() => (
+            <span>{this.props.renderNextPage()}</span>
           )}
           isDisabled={!paginationInfo.hasNextPage}
         />,

@@ -12,6 +12,8 @@ initialState = {
   activePage={state.activePage}
   itemsCountPerPage={PAGE_SIZE}
   totalItemsCount={totalResults}
+  renderPrevPage={() => (<i class="fa fa-chevron-left"></i>)}
+  renderNextPage={() => (<i class="fa fa-chevron-right"></i>)}
   onChange={(pageNumber) => {
     setState({ activePage: pageNumber });
   }}
