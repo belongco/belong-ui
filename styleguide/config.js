@@ -14,6 +14,7 @@ module.exports = {
         '../packages/checkbox/src/index.js',
         '../packages/radio-box/src/index.js',
         '../packages/suggestions/src/index.js',
+        '../packages/pagination/src/index.js',
       ]),
     },
     {
