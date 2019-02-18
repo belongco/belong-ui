@@ -8,7 +8,7 @@ class Page extends React.Component {
   static propTypes = {
     className: PropTypes.className,
     highlightedColor: PropTypes.string,
-    pageTag: PropTypes.string,
+    renderTag: PropTypes.func,
     onClick: PropTypes.func,
     pageNumber: PropTypes.number,
     activePage: PropTypes.number,
@@ -39,7 +39,7 @@ class Page extends React.Component {
         className={getClassNames('pagination-container__page', className)}
         onClick={e => this.handleClick(e)}
       >
-        <a dangerouslySetInnerHTML={{ __html: pageTag }}></a>
+        {this.props.renderTag()}
       </li>
     );
   }
@@ -66,8 +66,8 @@ export default class Pagination extends React.Component {
     itemsCountPerPage: 10,
     pageRangeDisplayed: 5,
     activePage: 1,
-    prevPageTag: '<i class="fa fa-chevron-left"></i>',
-    nextPageTag: '<i class="fa fa-chevron-right"></i>',
+    prevPageTag: 'fa fa-chevron-left',
+    nextPageTag: 'fa fa-chevron-right',
   };
 
   buildPages() {
@@ -99,7 +99,9 @@ export default class Pagination extends React.Component {
           key={i}
           pageNumber={i}
           activePage={this.props.activePage}
-          pageTag={`<span>${i}</span>`}
+          renderTag={() => (
+            <span>{i}</span>
+          )}
           hasPreviousPage={paginationInfo.hasPreviousPage}
           hasNextPage={paginationInfo.hasNextPage}
           onClick={onChange}
@@ -116,7 +118,9 @@ export default class Pagination extends React.Component {
           pageNumber={paginationInfo.previousPage}
           activePage={this.props.activePage}
           onClick={onChange}
-          pageTag={prevPageTag}
+          renderTag={() => (
+            <span><i className={prevPageTag}></i></span>
+          )}
           isDisabled={!paginationInfo.hasPreviousPage}
         />,
       );
@@ -131,7 +135,9 @@ export default class Pagination extends React.Component {
           pageNumber={paginationInfo.nextPage}
           activePage={this.props.activePage}
           onClick={onChange}
-          pageTag={nextPageTag}
+          renderTag={() => (
+            <span><i className={nextPageTag}></i></span>
+          )}
           isDisabled={!paginationInfo.hasNextPage}
         />,
       );
