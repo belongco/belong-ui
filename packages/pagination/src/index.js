@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getClassNames from 'classnames';
-import { Paginator } from './Paginator';
+import { Paginator } from './utlis';
 import './index.scss';
 
 class Page extends React.Component {
