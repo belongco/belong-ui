@@ -1,0 +1,24 @@
+.pagination-container {
+	display: flex;
+	&__page {
+		margin: 0 5px 0 5px;
+		line-height: 1.4;
+		font-size: 14px;
+		&:hover {
+			color: #ed7040;
+		}
+	}
+	&__page-first-last {
+		line-height: 1.2;
+		font-size: 14px;
+		&:hover {
+			color: #ed7040;
+		}
+	}
+	&__page--selected {
+		color: #ed7040;
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}
