@@ -1,0 +1,22 @@
+{
+  "name": "@belong-ui/toggle",
+  "version": "0.1.1",
+  "description": "belong-ui: Toggle Component",
+  "main": "dist/index.min.js",
+  "repository": "https://github.com/belongco/belong-ui",
+  "author": "atul sharma",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=toggle"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
+    "react": "16.0.0",
+    "react-dom": "16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -15,6 +15,7 @@ module.exports = {
         '../packages/radio-box/src/index.js',
         '../packages/suggestions/src/index.js',
         '../packages/pagination/src/index.js',
+        '../packages/toggle/src/index.js',
       ]),
     },
     {
