@@ -1,5 +1,6 @@
-.pagination-container {
+.blng-pagination {
 	display: flex;
+	list-style-type: none;
 	&__page {
 		margin: 0 5px 0 5px;
 		line-height: 1.4;
