@@ -87,6 +87,10 @@ export default class Pagination extends React.Component {
 
     const paginationInfo = Paginator(itemsCountPerPage, pageRangeDisplayed, totalItemsCount, activePage);
 
+    if (totalItemsCount <= itemsCountPerPage) {
+      return;
+    }
+
     for (
       let i = paginationInfo.firstPage;
       i <= paginationInfo.lastPage;
