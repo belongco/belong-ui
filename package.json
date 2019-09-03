@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"setup": "yarn install && lerna exec --parallel yarn install",
+		"setup": "yarn install && lerna exec --parallel yarn install --force --no-lockfile",
 		"lint": "eslint --ext .jsx --ext js ./packages/",
 		"styleguide": "styleguidist server --config ./styleguide/config.js",
 		"styleguide:build": "rm -rf build && rm -f index.html && styleguidist build --config ./styleguide/config.js && mv ./styleguide/styleguide/* ./",
@@ -35,8 +35,8 @@
 		"lerna": "^2.5.1",
 		"node-sass": "4.5.3",
 		"postcss-loader": "^0.9.1",
-		"react": "16.0.0",
-		"react-dom": "16.0.0",
+		"react": "16.8.0",
+		"react-dom": "16.8.0",
 		"react-hot-loader": "3.0.0",
 		"react-styleguidist": "^6.1.0",
 		"sass-loader": "6.0.6",

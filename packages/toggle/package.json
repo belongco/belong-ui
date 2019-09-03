@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/toggle",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "description": "belong-ui: Toggle Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.15",
     "prop-types": "^15.6.0",
-    "react": "16.0.0",
-    "react-dom": "16.0.0"
+    "react": "16.8.0",
+    "react-dom": "16.8.0"
   },
   "publishConfig": {
     "access": "public"

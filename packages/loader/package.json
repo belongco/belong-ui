@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/loader",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "description": "belong-ui: Loader Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
@@ -12,8 +12,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
-    "react": "16.0.0",
-    "react-dom": "16.0.0"
+    "react": "16.8.0",
+    "react-dom": "16.8.0"
   },
   "publishConfig": {
     "access": "public"
