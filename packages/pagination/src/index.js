@@ -36,7 +36,7 @@ class Page extends React.Component {
     return (
       <li
         style={{ color: pageNumber === activePage ? highlightedColor : null }}
-        className={getClassNames('pagination-container__page', className)}
+        className="blng-pagination__page"
         onClick={e => this.handleClick(e)}
       >
         {this.props.renderPage()}
@@ -59,6 +59,7 @@ export default class Pagination extends React.Component {
     pageRangeDisplayed: PropTypes.number,
     renderPrevPage: PropTypes.func,
     renderNextPage: PropTypes.func,
+    isShowFirstAndLastOption: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -66,6 +67,9 @@ export default class Pagination extends React.Component {
     itemsCountPerPage: 10,
     pageRangeDisplayed: 5,
     activePage: 1,
+    renderPrevPage: () => (<i className="fa fa-chevron-left"></i>),
+    renderNextPage: () => (<i className="fa fa-chevron-right"></i>),
+    isShowFirstAndLastOption: true,
   };
 
   buildPages() {
@@ -78,9 +82,14 @@ export default class Pagination extends React.Component {
       activePage,
       totalItemsCount,
       onChange,
+      isShowFirstAndLastOption,
     } = this.props;
 
     const paginationInfo = Paginator(itemsCountPerPage, pageRangeDisplayed, totalItemsCount, activePage);
+
+    if (totalItemsCount <= itemsCountPerPage) {
+      return;
+    }
 
     for (
       let i = paginationInfo.firstPage;
@@ -101,6 +110,7 @@ export default class Pagination extends React.Component {
           hasPreviousPage={paginationInfo.hasPreviousPage}
           hasNextPage={paginationInfo.hasNextPage}
           onClick={onChange}
+          isShowFirstAndLastOption={isShowFirstAndLastOption}
         />,
       );
     }
@@ -118,6 +128,7 @@ export default class Pagination extends React.Component {
             <span>{this.props.renderPrevPage()}</span>
           )}
           isDisabled={!paginationInfo.hasPreviousPage}
+          isShowFirstAndLastOption={isShowFirstAndLastOption}
         />,
       );
     }
@@ -135,6 +146,7 @@ export default class Pagination extends React.Component {
             <span>{this.props.renderNextPage()}</span>
           )}
           isDisabled={!paginationInfo.hasNextPage}
+          isShowFirstAndLastOption={isShowFirstAndLastOption}
         />,
       );
     }
@@ -143,15 +155,15 @@ export default class Pagination extends React.Component {
   }
 
   render() {
-    const { className, totalItemsCount, itemsCountPerPage, pageRangeDisplayed, activePage } = this.props;
+    const { className, totalItemsCount, itemsCountPerPage, pageRangeDisplayed, activePage, isShowFirstAndLastOption } = this.props;
     const paginationInfo = Paginator(itemsCountPerPage, pageRangeDisplayed, totalItemsCount, activePage);
     const pages = this.buildPages();
 
-    return (<ul className="pagination-container">
+    return (<ul className={getClassNames('blng-pagination', className)}>
       {
-        activePage >= pageRangeDisplayed &&
+        activePage >= pageRangeDisplayed && isShowFirstAndLastOption &&
         <span
-          className={getClassNames('pagination-container__page-first-last', className)}
+          className="blng-pagination__page-first-last"
           onClick={() => this.props.onChange(1)}
         >
           First |
@@ -159,9 +171,9 @@ export default class Pagination extends React.Component {
       }
       {pages}
       {
-        activePage >= pageRangeDisplayed && activePage < paginationInfo.totalPages &&
+        activePage >= pageRangeDisplayed && activePage < paginationInfo.totalPages && isShowFirstAndLastOption &&
         <span
-          className={getClassNames('pagination-container__page-first-last', className)}
+          className="blng-pagination__page-first-last"
           onClick={() => this.props.onChange(paginationInfo.totalPages)}
         >
           | Last
