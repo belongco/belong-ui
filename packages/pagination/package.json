@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/pagination",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "belong-ui: Pagination Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
