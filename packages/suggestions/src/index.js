@@ -46,7 +46,7 @@ class SuggestionsInput extends React.Component {
     return (
       <div className="blng-suggestions__input">
         <Input
-          className="blng-suggestions__text-input"
+          className={getClassNames('blng-suggestions__text-input', this.props.className)}
           ref={(ref) => { this.inputInstance = ref; }}
           placeholder={this.props.placeholder}
           value={this.props.value}
