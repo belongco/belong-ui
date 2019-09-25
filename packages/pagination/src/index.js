@@ -6,8 +6,7 @@ import './index.scss';
 
 class Page extends React.Component {
   static propTypes = {
-    className: PropTypes.className,
-    highlightedColor: PropTypes.string,
+    activePageClassName: PropTypes.string,
     renderPage: PropTypes.func,
     onClick: PropTypes.func,
     pageNumber: PropTypes.number,
@@ -31,12 +30,11 @@ class Page extends React.Component {
   }
 
   render() {
-    const { className, highlightedColor, pageNumber, activePage } = this.props;
+    const { activePageClassName, pageNumber, activePage } = this.props;
 
     return (
       <li
-        style={{ color: pageNumber === activePage ? highlightedColor : null }}
-        className="blng-pagination__page"
+        className={`blng-pagination__page${(pageNumber === activePage) ? ` ${activePageClassName}` : ''}`}
         onClick={e => this.handleClick(e)}
       >
         {this.props.renderPage()}
@@ -51,7 +49,7 @@ class Page extends React.Component {
 export default class Pagination extends React.Component {
   static propTypes = {
     className: PropTypes.string,
-    highlightedColor: PropTypes.string,
+    activePageClassName: PropTypes.string,
     totalItemsCount: PropTypes.number,
     onChange: PropTypes.func,
     activePage: PropTypes.number,
@@ -59,24 +57,27 @@ export default class Pagination extends React.Component {
     pageRangeDisplayed: PropTypes.number,
     renderPrevPage: PropTypes.func,
     renderNextPage: PropTypes.func,
+    renderFirstPage: PropTypes.func,
+    renderLastPage: PropTypes.func,
     isShowFirstAndLastOption: PropTypes.bool,
   };
 
   static defaultProps = {
-    highlightedColor: '#ed7040',
+    activePageClassName: 'blng-pagination__page--selected',
     itemsCountPerPage: 10,
     pageRangeDisplayed: 5,
     activePage: 1,
     renderPrevPage: () => (<i className="fa fa-chevron-left"></i>),
     renderNextPage: () => (<i className="fa fa-chevron-right"></i>),
+    renderFirstPage: () => (<span>First </span>),
+    renderLastPage: () => (<span>| Last</span>),
     isShowFirstAndLastOption: true,
   };
 
   buildPages() {
     const pages = [];
     const {
-      className,
-      highlightedColor,
+      activePageClassName,
       itemsCountPerPage,
       pageRangeDisplayed,
       activePage,
@@ -98,8 +99,7 @@ export default class Pagination extends React.Component {
     ) {
       pages.push(
         <Page
-          className={className}
-          highlightedColor={highlightedColor}
+          activePageClassName={activePageClassName}
           isActive={i === activePage}
           key={i}
           pageNumber={i}
@@ -118,8 +118,7 @@ export default class Pagination extends React.Component {
     if (paginationInfo.hasPreviousPage) {
       pages.unshift(
         <Page
-          className={className}
-          highlightedColor={highlightedColor}
+          activePageClassName={activePageClassName}
           key={'prev'}
           pageNumber={paginationInfo.previousPage}
           activePage={this.props.activePage}
@@ -136,8 +135,7 @@ export default class Pagination extends React.Component {
     if (paginationInfo.hasNextPage) {
       pages.push(
         <Page
-          className={className}
-          highlightedColor={highlightedColor}
+          activePageClassName={activePageClassName}
           key={'next'}
           pageNumber={paginationInfo.nextPage}
           activePage={this.props.activePage}
@@ -166,7 +164,7 @@ export default class Pagination extends React.Component {
           className="blng-pagination__page-first-last"
           onClick={() => this.props.onChange(1)}
         >
-          First |
+          {this.props.renderFirstPage()}
         </span>
       }
       {pages}
@@ -176,7 +174,7 @@ export default class Pagination extends React.Component {
           className="blng-pagination__page-first-last"
           onClick={() => this.props.onChange(paginationInfo.totalPages)}
         >
-          | Last
+          {this.props.renderLastPage()}
         </span>
       }
     </ul>
