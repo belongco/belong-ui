@@ -1,19 +1,19 @@
 #### Examples:
 
-```js
-const suggestions = ['apple', 'orange', 'banana', 'mango', 'badam', 'grapes', 'pineapple', 'guava', 'pear'];
+TagsInput is a set of components that can be used to build autosuggestion with tags components.
 
-// const suggestions = [
-//   { name: 'apple'},
-//   { name: 'orange'},
-//   { name: 'banana'},
-//   { name: 'mango'},
-//   { name: 'badam'},
-//   { name: 'grapes'},
-//   { name: 'pineapple'},
-//   { name: 'guava'},
-//   { name: 'pear'},
-// ];
+```js
+const suggestions = [
+  { name: 'apple'},
+  { name: 'orange'},
+  { name: 'banana'},
+  { name: 'mango'},
+  { name: 'badam'},
+  { name: 'grapes'},
+  { name: 'pineapple'},
+  { name: 'guava'},
+  { name: 'pear'},
+];
 
 
 initialState = {
@@ -45,11 +45,8 @@ initialState = {
 
     setTimeout(() => {
       const filteredSuggstions = suggestions.filter(suggestion => (
-        suggestion.indexOf(value) !== -1 || !value
+        suggestion['name'].indexOf(value) !== -1 || !value
       ));
-      // const filteredSuggstions = suggestions.filter(suggestion => (
-      //   suggestion['name'].indexOf(value) !== -1 || !value
-      // ));
 
       setState({ isLoading: false, filteredSuggstions });
     }, 1200);
