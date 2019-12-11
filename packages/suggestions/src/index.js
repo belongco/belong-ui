@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 // vendor modules
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -24,8 +25,12 @@ class SuggestionsInput extends React.Component {
     onEscape: PropTypes.func,
     onBlur: PropTypes.func,
     onFocus: PropTypes.func,
+    onKeyDown: PropTypes.func,
     className: PropTypes.string,
     placeholder: PropTypes.string,
+  };
+  static defaultProps = {
+    onKeyDown: () => {},
   };
   static contextTypes = {
     [SUGGESTIONS_CONTEXT]: PropTypes.object.isRequired,
@@ -53,6 +58,7 @@ class SuggestionsInput extends React.Component {
           onChange={this.props.onChange}
           onKeyDown={(event) => {
             onKeyDown(event);
+            this.props.onKeyDown(event);
           }}
         />
       </div>

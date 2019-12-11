@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/loader",
-  "version": "0.1.7",
+  "version": "0.1.10",
   "description": "belong-ui: Loader Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
