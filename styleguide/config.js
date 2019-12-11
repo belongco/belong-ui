@@ -16,6 +16,7 @@ module.exports = {
         '../packages/suggestions/src/index.js',
         '../packages/pagination/src/index.js',
         '../packages/toggle/src/index.js',
+        '../packages/tags-input/src/index.js',
       ]),
     },
     {

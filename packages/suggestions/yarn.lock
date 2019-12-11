@@ -2,23 +2,25 @@
 # yarn lockfile v1
 
 
-"@belong-ui/input@^0.1.3":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.4.tgz#a4c965cc6df20b8722bf3a344df40b40b1b5def5"
+"@belong-ui/input@^0.1.7":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.8.tgz#dd99f8852df492dc2729832007a5be27a2d62dfc"
+  integrity sha512-Shm+S5yzplOGwMUa86A6SMdAS4eVrW9CCrinlJ678cYC5kcPSDGK+QIyoW22p2qedRl806YjCCH2zHc+XPR1BQ==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
-    react "16.0.0"
-    react-dom "16.0.0"
+    react "16.8.0"
+    react-dom "16.8.0"
 
-"@belong-ui/loader@^0.1.3":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.4.tgz#68943347d7fb84bf08b5dab19902abfcad2640da"
+"@belong-ui/loader@^0.1.7":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.8.tgz#41b9d971352c1a875dec872e8a4c6b5021e12627"
+  integrity sha512-AZRAqlcZT0p314g65Xp/FXExYnY942o69v/+u4MixcAsp8VRFDzsXc1GTDLHxzQGiRIhJr9nSFNEM9zgWDXYyA==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
-    react "16.0.0"
-    react-dom "16.0.0"
+    react "16.8.0"
+    react-dom "16.8.0"
 
 asap@~2.0.3:
   version "2.0.6"
@@ -118,15 +120,6 @@ prop-types@^15.6.2:
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
-react-dom@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0.tgz#9cc3079c3dcd70d4c6e01b84aab2a7e34c303f58"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
-
 react-dom@16.8.0:
   version "16.8.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.0.tgz#18f28d4be3571ed206672a267c66dd083145a9c4"
@@ -139,15 +132,6 @@ react-dom@16.8.0:
 react-is@^16.8.1:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
-
-react@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0.tgz#ce7df8f1941b036f02b2cca9dbd0cb1f0e855e2d"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
 
 react@16.8.0:
   version "16.8.0"
