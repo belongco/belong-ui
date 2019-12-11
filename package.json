@@ -4,6 +4,7 @@
 		"lint": "eslint --ext .jsx --ext js ./packages/",
 		"styleguide": "styleguidist server --config ./styleguide/config.js",
 		"styleguide:build": "rm -rf build && rm -f index.html && styleguidist build --config ./styleguide/config.js && mv ./styleguide/styleguide/* ./",
+		"build-local": "lerna exec --parallel yarn run build && lerna bootstrap",
 		"publish:npm": "lerna bootstrap && lerna exec --parallel yarn run build && lerna publish --skip-git --registry=https://registry.npmjs.org/"
 	},
 	"pre-commit": [

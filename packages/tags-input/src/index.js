@@ -6,8 +6,7 @@ import _ from 'lodash';
 import Popover from '@belong-ui/popover';
 import Suggestions from '@belong-ui/suggestions';
 // utility modules
-// import { keyCodes } from '../../common/constants';
-
+import { keyCodes } from '../../common/constants';
 
 import './index.scss';
 
@@ -24,13 +23,13 @@ export default class TagsInput extends React.Component {
     searchValue: PropTypes.string,
     searchPlaceholder: PropTypes.string,
     onSearchChange: PropTypes.func,
-    onSearchClick: PropTypes.func,
     isSearchLoading: PropTypes.bool,
     messageIfNoSearchResults: PropTypes.string,
     suggestionsDisplayKey: PropTypes.string,
     onChange: PropTypes.func,
     suggestions: PropTypes.object,
     OnTagRemove: PropTypes.func,
+    onBackSpace: PropTypes.func,
   };
   static defaultProps = {
     isOpen: false,
@@ -64,14 +63,11 @@ export default class TagsInput extends React.Component {
           <Suggestions
             suggestions={this.props.suggestions}
             onSuggestionSelect={
-              (suggestion) => {
+              (suggestion, meta) => {
+                this.props.onChange(suggestion, meta);
                 this.setState({ isOpen: false });
-                if (!_.isEmpty(this.props.searchValue)) {
-                  this.props.onChange(suggestion);
-                }
               }
             }
-            onKeyDown={(e) => { console.log(e); }}
           >
             <Popover.TARGET>
               <div
@@ -108,6 +104,13 @@ export default class TagsInput extends React.Component {
                     this.searchInputInstance = ref;
                   }}
                   placeholder={this.props.searchPlaceholder}
+                  onKeyDown={(event) => {
+                    if (event.keyCode === keyCodes.BACKSPACE) {
+                      if (_.isEmpty(this.props.searchValue)) {
+                        this.props.onBackSpace();
+                      }
+                    }
+                  }}
                 />
               </div>
             </Popover.TARGET>
@@ -125,6 +128,7 @@ export default class TagsInput extends React.Component {
                     (suggestion) => {
                       this.setState({ isOpen: false });
                       this.props.onChange(suggestion);
+                      this.onInputClick();
                     }
                   }
                 />

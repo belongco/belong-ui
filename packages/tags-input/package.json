@@ -10,9 +10,9 @@
     "build": "webpack --config ../../webpack.lib.config.js --env.pkg=tags-input"
   },
   "dependencies": {
-    "@belong-ui/input": "^0.1.8",
-    "@belong-ui/popover": "^0.1.8",
-    "@belong-ui/suggestions": "^0.1.8",
+    "@belong-ui/input": "^0.1.10",
+    "@belong-ui/popover": "^0.1.10",
+    "@belong-ui/suggestions": "^0.1.10",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",

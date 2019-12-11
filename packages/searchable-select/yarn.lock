@@ -2,30 +2,30 @@
 # yarn lockfile v1
 
 
-"@belong-ui/input@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.8.tgz#dd99f8852df492dc2729832007a5be27a2d62dfc"
-  integrity sha512-Shm+S5yzplOGwMUa86A6SMdAS4eVrW9CCrinlJ678cYC5kcPSDGK+QIyoW22p2qedRl806YjCCH2zHc+XPR1BQ==
+"@belong-ui/input@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.10.tgz#9b2ac313902108c5899ea3e93c2d441c25fa50d1"
+  integrity sha512-Hm+TNxr9MPbSXB5VVTouLwksjot/2X9USLbW+qG6CJWrXdEJvlbwvCa9VwXL7HU1ZRqnm4/nMso3o1JG48t7WQ==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     react "16.8.0"
     react-dom "16.8.0"
 
-"@belong-ui/loader@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.8.tgz#41b9d971352c1a875dec872e8a4c6b5021e12627"
-  integrity sha512-AZRAqlcZT0p314g65Xp/FXExYnY942o69v/+u4MixcAsp8VRFDzsXc1GTDLHxzQGiRIhJr9nSFNEM9zgWDXYyA==
+"@belong-ui/loader@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.10.tgz#7e9d7ec53eb17976468a24ec8b4d16b56a015a24"
+  integrity sha512-4RmxJMAwdAhHppzZ20e1WRFlxJjuqPpw3vlyFnb382kqNtV9rPlMBGzOn14VQpKJ0kC8CmREU6ALd7UaPlLKoQ==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     react "16.8.0"
     react-dom "16.8.0"
 
-"@belong-ui/popover@^0.1.7":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@belong-ui/popover/-/popover-0.1.8.tgz#96026df320bc577e2901e6cba0a708060eb8299b"
-  integrity sha512-H33q3VgEkKYfWLnAbzZRd0bjSEuNpKtalWaxe5puFuQ2WO27Ubpjq02DL3sR9cGk5xolhdenOmINGccVgfJm3w==
+"@belong-ui/popover@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@belong-ui/popover/-/popover-0.1.10.tgz#0c1a9cf0808ea6c9e5f7cfd51980bf9bd2434c08"
+  integrity sha512-vYJ3SmV58KjXuljV23MPNTc4xEfky+FRFBrclb3DAjWvMixAMRL8E4TJr6xbPB7E8aiYGPyJu+weKx3L1+7Nlw==
   dependencies:
     classnames "^2.2.5"
     popper.js "^1.12.5"
@@ -33,13 +33,13 @@
     react "16.8.0"
     react-dom "16.8.0"
 
-"@belong-ui/suggestions@^0.1.7":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@belong-ui/suggestions/-/suggestions-0.1.8.tgz#6451e7572c8d28d6b0ba3792f413e1d5b7633265"
-  integrity sha512-5H4y/0uAvZPIzoCsWcxqTfHZE6mF8g1ywAIPkZu2w2uoUUP9W+H4Y9Hv1P8EWUsor9ubhQJQXA/2zThXQobe0A==
+"@belong-ui/suggestions@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@belong-ui/suggestions/-/suggestions-0.1.10.tgz#fe997d7ec813d50108a2afbff1bb5955a11795d3"
+  integrity sha512-xzD5Y2cFPw2k9NWwIguJJUdJrQdQ+7MlUAaJsf2vdANAgh5dY94/unWDd5vZGHWowPK5GIV98f7aM7vybdjMjg==
   dependencies:
-    "@belong-ui/input" "^0.1.8"
-    "@belong-ui/loader" "^0.1.8"
+    "@belong-ui/input" "^0.1.10"
+    "@belong-ui/loader" "^0.1.10"
     classnames "^2.2.5"
     lodash "^4.17.15"
     prop-types "^15.6.0"

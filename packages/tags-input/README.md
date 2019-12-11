@@ -1,17 +1,20 @@
 #### Examples:
 
 ```js
-const suggestions = [
-  { name: 'apple'},
-  { name: 'orange'},
-  { name: 'banana'},
-  { name: 'mango'},
-  { name: 'badam'},
-  { name: 'grapes'},
-  { name: 'pineapple'},
-  { name: 'guava'},
-  { name: 'pear'},
-];
+const suggestions = ['apple', 'orange', 'banana', 'mango', 'badam', 'grapes', 'pineapple', 'guava', 'pear'];
+
+// const suggestions = [
+//   { name: 'apple'},
+//   { name: 'orange'},
+//   { name: 'banana'},
+//   { name: 'mango'},
+//   { name: 'badam'},
+//   { name: 'grapes'},
+//   { name: 'pineapple'},
+//   { name: 'guava'},
+//   { name: 'pear'},
+// ];
+
 
 initialState = {
   searchValue: '',
@@ -24,10 +27,17 @@ initialState = {
 <TagsInput
   searchValue={state.searchValue}
   onChange={(newValue) => {
-    setState((prevState) => {
-      selectedItem = state.selectedItem.push(newValue.name);
-      searchValue = '';
-    });
+    if (newValue.name) {
+      setState(prevState => ({
+        selectedItem: [...prevState.selectedItem, newValue.name],
+        searchValue: '',
+      }));
+    } else {
+      setState(prevState => ({
+        selectedItem: [...prevState.selectedItem, newValue],
+        searchValue: '',
+      }));
+    }
   }}
   isSearchLoading={state.isLoading}
   onSearchChange={(value) => {
@@ -35,8 +45,11 @@ initialState = {
 
     setTimeout(() => {
       const filteredSuggstions = suggestions.filter(suggestion => (
-        suggestion['name'].indexOf(value) !== -1 || !value
+        suggestion.indexOf(value) !== -1 || !value
       ));
+      // const filteredSuggstions = suggestions.filter(suggestion => (
+      //   suggestion['name'].indexOf(value) !== -1 || !value
+      // ));
 
       setState({ isLoading: false, filteredSuggstions });
     }, 1200);
@@ -46,11 +59,16 @@ initialState = {
       selectedItem: state.selectedItem.filter((item, i) => i !== index),
     });
   }}
+  onBackSpace={() => {
+    setState(prevState => ({
+      selectedItem: [...prevState.selectedItem, state.selectedItem.pop()],
+    }, () => {}));
+  }}
   suggestions={state.filteredSuggstions}
   selectedItem={state.selectedItem}
   suggestionsDisplayKey="name"
   searchPlaceholder="To"
-  helpText="Search and Select a Fruit"
+  messageIfNoSearchResults="No Search Found"
 />
 </div>
 ```
