@@ -49,7 +49,7 @@ export default class TagsInput extends React.Component {
     }
   }
 
-  onInputClick = () => {
+  triggerFocusSuggestionsInput = () => {
     this.searchInputInstance.focus();
   };
 
@@ -71,7 +71,7 @@ export default class TagsInput extends React.Component {
             <Popover.TARGET>
               <div
                 className="blng-tags-input__items"
-                onClick={() => { this.onInputClick(); }}
+                onClick={() => { this.triggerFocusSuggestionsInput(); }}
               >
                 {_.map(this.props.selectedItem, (item, index) => (
                   <React.Fragment>
@@ -129,7 +129,7 @@ export default class TagsInput extends React.Component {
                     (suggestion, meta) => {
                       this.setState({ isOpen: false });
                       this.props.onAddTag(suggestion, meta);
-                      this.onInputClick();
+                      this.triggerFocusSuggestionsInput();
                     }
                   }
                 />

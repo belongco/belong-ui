@@ -26,8 +26,8 @@ initialState = {
 <div>
 <TagsInput
   searchValue={state.searchValue}
-  onAddTag={(newTag) => {
-    if (newTag.name) {
+  onAddTag={(newTag, meta) => {
+    if (meta.isSuggestion) {
       setState(prevState => ({
         selectedItem: [...prevState.selectedItem, newTag.name],
         searchValue: '',
