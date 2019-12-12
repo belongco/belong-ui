@@ -75,7 +75,7 @@ export default class Input extends React.Component {
       this.props.onEnter(e.target.value);
     }
 
-    if (e.keyCodes === keyCodes.ESCAPE) {
+    if (e.keyCode === keyCodes.ESCAPE) {
       this.props.onEscape(e.target.value);
     }
   }

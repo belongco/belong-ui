@@ -1,0 +1,25 @@
+{
+  "name": "@belong-ui/tags-input",
+  "version": "0.1.7",
+  "description": "belong-ui: Tags Input Component",
+  "main": "dist/index.min.js",
+  "repository": "https://github.com/belongco/belong-ui",
+  "author": "saurabh gaur",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=tags-input"
+  },
+  "dependencies": {
+    "@belong-ui/input": "^0.1.10",
+    "@belong-ui/popover": "^0.1.10",
+    "@belong-ui/suggestions": "^0.1.10",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

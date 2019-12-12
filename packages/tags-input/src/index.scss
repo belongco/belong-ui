@@ -1,0 +1,49 @@
+@import '../../../scss/index.scss';
+
+.blng-tags-input {
+  .blng-popover__target {
+    display: block;
+  }
+  .blng-popover__target {
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: solid 1px $grey-4;
+    padding: 5px 10px 0px 10px;
+    transition: all 0.2s ease;
+    outline: 0;
+  }
+  .blng-suggestions__input {
+    margin-bottom: 5px;
+    input {
+      border: unset;
+      outline: 0;
+      font-size: 14px;
+      height: 30px;
+    }
+  }
+  &__content {
+    min-width: 280px;
+    background: #ffffff;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 3px;
+  }
+  &__tag {
+    font-size: 14px;
+    background-color: $grey-1;
+    padding: 7px 13px;
+    border-radius: 14px;
+    margin: 0 5px 5px 0;
+    &-remove {
+      font-size: 12px;
+      font-weight: normal;
+      margin-left: 5px;
+      cursor: pointer;
+      color: $grey-6;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

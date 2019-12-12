@@ -2,45 +2,49 @@
 # yarn lockfile v1
 
 
-"@belong-ui/input@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.4.tgz#a4c965cc6df20b8722bf3a344df40b40b1b5def5"
+"@belong-ui/input@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.10.tgz#9b2ac313902108c5899ea3e93c2d441c25fa50d1"
+  integrity sha512-Hm+TNxr9MPbSXB5VVTouLwksjot/2X9USLbW+qG6CJWrXdEJvlbwvCa9VwXL7HU1ZRqnm4/nMso3o1JG48t7WQ==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
-    react "16.0.0"
-    react-dom "16.0.0"
+    react "16.8.0"
+    react-dom "16.8.0"
 
-"@belong-ui/loader@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.4.tgz#68943347d7fb84bf08b5dab19902abfcad2640da"
+"@belong-ui/loader@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.10.tgz#7e9d7ec53eb17976468a24ec8b4d16b56a015a24"
+  integrity sha512-4RmxJMAwdAhHppzZ20e1WRFlxJjuqPpw3vlyFnb382kqNtV9rPlMBGzOn14VQpKJ0kC8CmREU6ALd7UaPlLKoQ==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
-    react "16.0.0"
-    react-dom "16.0.0"
+    react "16.8.0"
+    react-dom "16.8.0"
 
-"@belong-ui/popover@^0.1.3":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@belong-ui/popover/-/popover-0.1.4.tgz#bcc7060cbb681805b808466be5e7efb2f5568501"
+"@belong-ui/popover@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@belong-ui/popover/-/popover-0.1.10.tgz#0c1a9cf0808ea6c9e5f7cfd51980bf9bd2434c08"
+  integrity sha512-vYJ3SmV58KjXuljV23MPNTc4xEfky+FRFBrclb3DAjWvMixAMRL8E4TJr6xbPB7E8aiYGPyJu+weKx3L1+7Nlw==
   dependencies:
     classnames "^2.2.5"
     popper.js "^1.12.5"
     prop-types "^15.6.0"
-    react "16.0.0"
-    react-dom "16.0.0"
+    react "16.8.0"
+    react-dom "16.8.0"
 
-"@belong-ui/suggestions@^0.1.3":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@belong-ui/suggestions/-/suggestions-0.1.4.tgz#d99fa66c9a9663c5642ce2628d3be2e22c0eb69a"
+"@belong-ui/suggestions@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@belong-ui/suggestions/-/suggestions-0.1.10.tgz#fe997d7ec813d50108a2afbff1bb5955a11795d3"
+  integrity sha512-xzD5Y2cFPw2k9NWwIguJJUdJrQdQ+7MlUAaJsf2vdANAgh5dY94/unWDd5vZGHWowPK5GIV98f7aM7vybdjMjg==
   dependencies:
-    "@belong-ui/input" "^0.1.4"
-    "@belong-ui/loader" "^0.1.4"
+    "@belong-ui/input" "^0.1.10"
+    "@belong-ui/loader" "^0.1.10"
     classnames "^2.2.5"
-    lodash "^4.17.4"
+    lodash "^4.17.15"
     prop-types "^15.6.0"
-    react "16.0.0"
-    react-dom "16.0.0"
+    react "16.8.0"
+    react-dom "16.8.0"
 
 asap@~2.0.3:
   version "2.0.6"
@@ -95,10 +99,6 @@ lodash@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
 
-lodash@^4.17.4:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
-
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
@@ -148,15 +148,6 @@ prop-types@^15.6.2:
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
-react-dom@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0.tgz#9cc3079c3dcd70d4c6e01b84aab2a7e34c303f58"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
-
 react-dom@16.8.0:
   version "16.8.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.0.tgz#18f28d4be3571ed206672a267c66dd083145a9c4"
@@ -169,15 +160,6 @@ react-dom@16.8.0:
 react-is@^16.8.1:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
-
-react@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0.tgz#ce7df8f1941b036f02b2cca9dbd0cb1f0e855e2d"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
 
 react@16.8.0:
   version "16.8.0"
