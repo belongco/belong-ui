@@ -128,7 +128,7 @@ export default class TagsInput extends React.Component {
                   onSuggestionClick={
                     (suggestion, meta) => {
                       this.setState({ isOpen: false });
-                      this.props.onAddTag(suggestion, meta);
+                      this.props.onAddTag(suggestion, { ...meta, isSuggestion: true });
                       this.triggerFocusSuggestionsInput();
                     }
                   }
