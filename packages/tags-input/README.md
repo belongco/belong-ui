@@ -26,15 +26,15 @@ initialState = {
 <div>
 <TagsInput
   searchValue={state.searchValue}
-  onChange={(newValue) => {
-    if (newValue.name) {
+  onAddTag={(newTag) => {
+    if (newTag.name) {
       setState(prevState => ({
-        selectedItem: [...prevState.selectedItem, newValue.name],
+        selectedItem: [...prevState.selectedItem, newTag.name],
         searchValue: '',
       }));
     } else {
       setState(prevState => ({
-        selectedItem: [...prevState.selectedItem, newValue],
+        selectedItem: [...prevState.selectedItem, newTag],
         searchValue: '',
       }));
     }
@@ -51,19 +51,14 @@ initialState = {
       setState({ isLoading: false, filteredSuggstions });
     }, 1200);
   }}
-  OnTagRemove={(index) => {
+  OnRemoveTag={(item, index, meta) => {
     setState({
       selectedItem: state.selectedItem.filter((item, i) => i !== index),
     });
   }}
-  onBackSpace={() => {
-    setState(prevState => ({
-      selectedItem: [...prevState.selectedItem, state.selectedItem.pop()],
-    }, () => {}));
-  }}
   suggestions={state.filteredSuggstions}
   selectedItem={state.selectedItem}
-  suggestionsDisplayKey="name"
+  renderSuggestion={(suggestion) => (<span>{suggestion.name}</span>)}
   searchPlaceholder="To"
   messageIfNoSearchResults="No Search Found"
 />

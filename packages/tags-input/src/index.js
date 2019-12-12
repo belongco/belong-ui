@@ -25,11 +25,10 @@ export default class TagsInput extends React.Component {
     onSearchChange: PropTypes.func,
     isSearchLoading: PropTypes.bool,
     messageIfNoSearchResults: PropTypes.string,
-    suggestionsDisplayKey: PropTypes.string,
-    onChange: PropTypes.func,
+    renderSuggestion: PropTypes.func,
+    onAddTag: PropTypes.func,
+    OnRemoveTag: PropTypes.func,
     suggestions: PropTypes.object,
-    OnTagRemove: PropTypes.func,
-    onBackSpace: PropTypes.func,
   };
   static defaultProps = {
     isOpen: false,
@@ -64,7 +63,7 @@ export default class TagsInput extends React.Component {
             suggestions={this.props.suggestions}
             onSuggestionSelect={
               (suggestion, meta) => {
-                this.props.onChange(suggestion, meta);
+                this.props.onAddTag(suggestion, meta);
                 this.setState({ isOpen: false });
               }
             }
@@ -84,7 +83,7 @@ export default class TagsInput extends React.Component {
                         {item}
                         <i
                           className="fa fa-times"
-                          onClick={() => { this.props.OnTagRemove(index); }}
+                          onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
                         />
                       </span>
                     ) : null}
@@ -107,7 +106,9 @@ export default class TagsInput extends React.Component {
                   onKeyDown={(event) => {
                     if (event.keyCode === keyCodes.BACKSPACE) {
                       if (_.isEmpty(this.props.searchValue)) {
-                        this.props.onBackSpace();
+                        const index = this.props.selectedItem.length - 1;
+
+                        this.props.OnRemoveTag(this.props.selectedItem[index], index, { isBackspace: true });
                       }
                     }
                   }}
@@ -123,11 +124,11 @@ export default class TagsInput extends React.Component {
                   isLoading={this.props.isSearchLoading}
                   messageIfEmpty={this.props.messageIfNoSearchResults}
                   suggestionClassname="blng-searchable-select__suggestion"
-                  suggestionsDisplayKey={this.props.suggestionsDisplayKey}
+                  renderSuggestion={this.props.renderSuggestion}
                   onSuggestionClick={
-                    (suggestion) => {
+                    (suggestion, meta) => {
                       this.setState({ isOpen: false });
-                      this.props.onChange(suggestion);
+                      this.props.onAddTag(suggestion, meta);
                       this.onInputClick();
                     }
                   }
