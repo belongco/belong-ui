@@ -19,7 +19,7 @@ export default class TagsInput extends React.Component {
     isDisabled: PropTypes.bool,
     className: PropTypes.string,
     onDropdownClose: PropTypes.func,
-    selectedItem: PropTypes.array,
+    tags: PropTypes.array,
     searchValue: PropTypes.string,
     searchPlaceholder: PropTypes.string,
     onSearchChange: PropTypes.func,
@@ -73,7 +73,7 @@ export default class TagsInput extends React.Component {
                 className="blng-tags-input__items"
                 onClick={() => { this.triggerFocusSuggestionsInput(); }}
               >
-                {_.map(this.props.selectedItem, (item, index) => (
+                {_.map(this.props.tags, (item, index) => (
                   <React.Fragment>
                     {!_.isEmpty(item) ? (
                       <span
@@ -82,7 +82,7 @@ export default class TagsInput extends React.Component {
                       >
                         {item}
                         <i
-                          className="fa fa-times"
+                          className="fa fa-times blng-tags-input__tag-remove"
                           onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
                         />
                       </span>
@@ -106,9 +106,9 @@ export default class TagsInput extends React.Component {
                   onKeyDown={(event) => {
                     if (event.keyCode === keyCodes.BACKSPACE) {
                       if (_.isEmpty(this.props.searchValue)) {
-                        const index = this.props.selectedItem.length - 1;
+                        const index = this.props.tags.length - 1;
 
-                        this.props.OnRemoveTag(this.props.selectedItem[index], index, { isBackspace: true });
+                        this.props.OnRemoveTag(this.props.tags[index], index, { isBackspace: true });
                       }
                     }
                   }}
@@ -118,7 +118,7 @@ export default class TagsInput extends React.Component {
             <Popover.CONTENT
               isOpen={this.state.isOpen}
             >
-              <div className="blng-select-dropdown__content">
+              <div className="blng-tags-input__content">
                 <Suggestions.CONTAINER
                   className="blng-searchable-select__suggestions"
                   isLoading={this.props.isSearchLoading}

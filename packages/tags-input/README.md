@@ -20,7 +20,7 @@ initialState = {
   searchValue: '',
   selectedItem: [],
   isLoading: false,
-  filteredSuggstions: suggestions,
+  filteredSuggestions: suggestions,
 };
 
 <div>
@@ -44,11 +44,11 @@ initialState = {
     setState({ searchValue: value, isLoading: true });
 
     setTimeout(() => {
-      const filteredSuggstions = suggestions.filter(suggestion => (
+      const filteredSuggestions = suggestions.filter(suggestion => (
         suggestion['name'].indexOf(value) !== -1 || !value
       ));
 
-      setState({ isLoading: false, filteredSuggstions });
+      setState({ isLoading: false, filteredSuggestions });
     }, 1200);
   }}
   OnRemoveTag={(item, index, meta) => {
@@ -56,11 +56,11 @@ initialState = {
       selectedItem: state.selectedItem.filter((item, i) => i !== index),
     });
   }}
-  suggestions={state.filteredSuggstions}
-  selectedItem={state.selectedItem}
+  suggestions={state.filteredSuggestions}
+  tags={state.selectedItem}
   renderSuggestion={(suggestion) => (<span>{suggestion.name}</span>)}
   searchPlaceholder="To"
-  messageIfNoSearchResults="No Search Found"
+  messageIfNoSearchResults="No Search Result"
 />
 </div>
 ```
