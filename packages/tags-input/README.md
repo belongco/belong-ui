@@ -58,6 +58,7 @@ initialState = {
   }}
   suggestions={state.filteredSuggestions}
   tags={state.selectedItem}
+  renderTag={tag => tag}
   renderSuggestion={(suggestion) => (<span>{suggestion.name}</span>)}
   searchPlaceholder="To"
   messageIfNoSearchResults="No Search Result"

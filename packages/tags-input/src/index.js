@@ -20,6 +20,7 @@ export default class TagsInput extends React.Component {
     className: PropTypes.string,
     onDropdownClose: PropTypes.func,
     tags: PropTypes.array,
+    renderTag: PropTypes.func,
     searchValue: PropTypes.string,
     searchPlaceholder: PropTypes.string,
     onSearchChange: PropTypes.func,
@@ -80,7 +81,7 @@ export default class TagsInput extends React.Component {
                         className="blng-tags-input__tag"
                         key={index}
                       >
-                        {item}
+                        {this.props.renderTag(item)}
                         <i
                           className="fa fa-times blng-tags-input__tag-remove"
                           onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
