@@ -33,6 +33,7 @@ export default class TagsInput extends React.Component {
   };
   static defaultProps = {
     isOpen: false,
+    renderTag: () => ('render tag'),
   }
   state = {
     isOpen: this.props.isOpen,
