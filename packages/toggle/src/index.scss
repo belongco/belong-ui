@@ -2,14 +2,17 @@
   position: relative;
   display: inline-block;
   width: 35px;
-  height: 20px;
+  height: 14px;
   &__input {
     opacity: 0;
     width: 0;
     height: 0;
     &:checked {
       + .blng-toggle__slider {
-        background-color: #4bc7d8;
+        background-color: #ABE1E8;
+        &::before {
+          background-color: #36C0D4;
+        }
       }
       + .blng-toggle__slider:before {
         -webkit-transform: translateX(15px);
@@ -19,7 +22,7 @@
     }
     &:focus {
       + .blng-toggle__slider {
-        box-shadow: 0 0 1px #4bc7d8;
+        box-shadow: 0 0 1px #ABE1E8;
       }
     }
   }
@@ -36,10 +39,10 @@
     &:before {
       position: absolute;
       content: "";
-      height: 16px;
-      width: 15px;
-      left: 2px;
-      bottom: 2px;
+      height: 19px;
+      width: 19px;
+      left: 0;
+      bottom: -2px;
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;
@@ -48,6 +51,7 @@
       border-radius: 34px;
       &:before {
         border-radius: 50%;
+        background-color: #9e9e9e;
       }
     }
   }
