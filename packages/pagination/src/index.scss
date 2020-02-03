@@ -2,22 +2,28 @@
 	display: flex;
 	list-style-type: none;
 	&__page {
-		margin: 0 5px 0 5px;
-		line-height: 1.4;
+		margin: 0 3px;
+		padding: 7px 15px;
 		font-size: 14px;
+		border-radius: 14px;
 		&:hover {
-			color: #ed7040;
+			background-color: #e9ecef;
 		}
 	}
 	&__page-first-last {
-		line-height: 1.2;
+		padding: 6px 15px;
 		font-size: 14px;
+		border-radius: 14px;
 		&:hover {
-			color: #ed7040;
+			background-color: #e9ecef;
 		}
 	}
 	&__page--selected {
-		color: #ed7040;
+		color: #ffffff;
+		background-color: #36c0d4;
+		&:hover {
+			background-color: #36c0d4;
+		}
 	}
 	&:hover {
 		cursor: pointer;
