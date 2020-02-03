@@ -37,11 +37,7 @@
       box-sizing: border-box;
       height: 34px;
       line-height: 34px;
-      border-radius: 3px;
       color: $grey-11;
-      background-color: $grey-1;
-      background-image: linear-gradient(to bottom, white, $grey-1);
-      border: solid 1px $grey-4;
       text-align: center;
       transition: all 0.2s ease;
       i {
@@ -77,6 +73,9 @@
           box-shadow: none;
         }
       }
+    }
+    .blng-popover__content {
+      left: 4px !important;
     }
   }
 
