@@ -7,7 +7,7 @@
 		font-size: 14px;
 		border-radius: 14px;
 		&:hover {
-			background-color: #e9ecef;
+			background-color: $grey-15;
 		}
 	}
 	&__page-first-last {
@@ -15,7 +15,7 @@
 		font-size: 14px;
 		border-radius: 14px;
 		&:hover {
-			background-color: #e9ecef;
+			background-color: $grey-15;
 		}
 	}
 	&__page--selected {

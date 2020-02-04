@@ -9,9 +9,9 @@
     height: 0;
     &:checked {
       + .blng-toggle__slider {
-        background-color: #ABE1E8;
+        background-color: $blue-3;
         &::before {
-          background-color: #36C0D4;
+          background-color: $blue-6;
         }
       }
       + .blng-toggle__slider:before {
@@ -22,7 +22,7 @@
     }
     &:focus {
       + .blng-toggle__slider {
-        box-shadow: 0 0 1px #ABE1E8;
+        box-shadow: 0 0 1px $blue-3;
       }
     }
   }
@@ -33,7 +33,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: $grey-16;
     -webkit-transition: .4s;
     transition: .4s;
     &:before {
@@ -51,7 +51,7 @@
       border-radius: 34px;
       &:before {
         border-radius: 50%;
-        background-color: #9e9e9e;
+        background-color: $grey-17;
       }
     }
   }
