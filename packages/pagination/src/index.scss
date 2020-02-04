@@ -3,7 +3,7 @@
 	list-style-type: none;
 	&__page {
 		margin: 0 3px;
-		padding: 7px 15px;
+		padding: 5px;
 		font-size: 14px;
 		border-radius: 14px;
 		&:hover {
@@ -11,7 +11,7 @@
 		}
 	}
 	&__page-first-last {
-		padding: 6px 15px;
+		padding: 5px;
 		font-size: 14px;
 		border-radius: 14px;
 		&:hover {
@@ -19,11 +19,7 @@
 		}
 	}
 	&__page--selected {
-		color: #ffffff;
-		background-color: #36c0d4;
-		&:hover {
-			background-color: #36c0d4;
-		}
+		font-weight: bold;
 	}
 	&:hover {
 		cursor: pointer;
