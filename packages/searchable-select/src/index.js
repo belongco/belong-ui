@@ -15,7 +15,6 @@ import './index.scss';
 export default class SearchableSelect extends React.Component {
   static propTypes = {
     name: PropTypes.string,
-    helpText: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func,
     searchValue: PropTypes.string,
@@ -103,13 +102,6 @@ export default class SearchableSelect extends React.Component {
               className="blng-searchable-select__content"
             >
               <div className="blng-searchable-select__suggestions-container">
-                {
-                  this.props.helpText ? (
-                    <div className="blng-searchable-select__suggestions-help">
-                      {this.props.helpText}
-                    </div>
-                  ) : null
-                }
                 <div className="blng-searchable-select__suggestions-wrap">
                   <Suggestions
                     suggestions={this.props.suggestions}

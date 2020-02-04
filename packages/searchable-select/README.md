@@ -45,7 +45,6 @@ initialState = {
   )}
   suggestionsDisplayKey="name"
   searchPlaceholder="Search a Fruit"
-  helpText="Search and Select a Fruit"
 />
 <br /><br />
 
@@ -62,7 +61,6 @@ initialState = {
     state.selectedItem ? state.selectedItem['name'] : (<span>Disabled Search</span>)
   )}
   searchPlaceholder="Search a Fruit"
-  helpText="Search and Select a Fruit"
   suggestions={suggestions}
 />
 </div>
