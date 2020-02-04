@@ -12,6 +12,19 @@
   transition: all 0.2s ease;
   outline: 0;
 
+  &::-webkit-input-placeholder {
+    color: $grey-14;
+  }
+  &::-moz-placeholder {
+    color: $grey-14;
+  }
+  &:-ms-input-placeholder {
+    color: $grey-14;
+  }
+  &:-moz-placeholder {
+    color: $grey-14;
+  }
+
   &--textarea {
     height: auto;
     min-width: auto;
