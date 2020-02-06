@@ -2,26 +2,6 @@
 # yarn lockfile v1
 
 
-"@belong-ui/input@^0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@belong-ui/input/-/input-0.1.10.tgz#9b2ac313902108c5899ea3e93c2d441c25fa50d1"
-  integrity sha512-Hm+TNxr9MPbSXB5VVTouLwksjot/2X9USLbW+qG6CJWrXdEJvlbwvCa9VwXL7HU1ZRqnm4/nMso3o1JG48t7WQ==
-  dependencies:
-    classnames "^2.2.5"
-    prop-types "^15.6.0"
-    react "16.8.0"
-    react-dom "16.8.0"
-
-"@belong-ui/loader@^0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@belong-ui/loader/-/loader-0.1.10.tgz#7e9d7ec53eb17976468a24ec8b4d16b56a015a24"
-  integrity sha512-4RmxJMAwdAhHppzZ20e1WRFlxJjuqPpw3vlyFnb382kqNtV9rPlMBGzOn14VQpKJ0kC8CmREU6ALd7UaPlLKoQ==
-  dependencies:
-    classnames "^2.2.5"
-    prop-types "^15.6.0"
-    react "16.8.0"
-    react-dom "16.8.0"
-
 asap@~2.0.3:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
