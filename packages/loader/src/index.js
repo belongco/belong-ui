@@ -11,13 +11,11 @@ import './index.scss';
  */
 export default class Loader extends React.Component {
   static defaultProps = {
-    color: 'blue',
     size: 'small',
     isContinous: false,
     stepSize: 2000,
   };
   static propTypes = {
-    color: PropTypes.oneOf(['blue', 'green', 'purple', 'orange']),
     size: PropTypes.oneOf(['small', 'medium', 'large', 'x-large']),
     isContinous: PropTypes.bool,
     className: PropTypes.string,
@@ -45,7 +43,7 @@ export default class Loader extends React.Component {
   }
 
   render() {
-    const loaderColorClassName = `blng-loader__circle--color-${this.props.color}`;
+    const loaderColorClassName = 'blng-loader__circle--color-blue';
     const isContinous = this.props.isContinous;
     const circleSizeClassName = `blng-loader__circle--size-${this.props.size}`;
 

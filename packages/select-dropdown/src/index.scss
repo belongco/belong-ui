@@ -22,7 +22,7 @@
       vertical-align: middle;
       i {
         color: $grey-7;
-        font-size: 20px;
+        font-size: 16px;
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
       &--open {
@@ -37,8 +37,8 @@
     }
 
     &__content {
-      min-width: 200px;
-      background: #ffffff;
+      width: 280px;
+      background: $white;
       max-height: 300px;
       overflow-y: auto;
       border-radius: 3px;
@@ -59,6 +59,12 @@
         background: $blue-3;
       }
     }
+    &__input {
+      width: 280px;
+      .blng-popover__content {
+        left: 4px !important;
+      }
+    }
 
     &--is-input {
       font-size: 14px;
@@ -76,13 +82,9 @@
         float: right;
         width: 34px;
         height: 34px;
-        background-color: $grey-1;
-        background-image: linear-gradient(to bottom, white, $grey-1);
-        border-radius: 3px;
         box-sizing: border-box;
         color: $grey-11;
         text-align: center;
-        border: solid 1px $grey-4;
       }
       .blng-select-dropdown__text {
         position: relative;
@@ -95,7 +97,7 @@
         line-height: 34px;
       }
       .blng-select-dropdown__dropdown-icon i {
-        font-size: 14px;
+        font-size: 16px;
         color: $grey-11;
       }
     }

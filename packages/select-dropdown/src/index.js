@@ -32,7 +32,7 @@ export default class SelectDropdown extends React.Component {
       _.isString(item) ? <span>{item}</span> : <span>Missing renderItem() prop</span>
     ),
     renderToggleIcon: (isInput = false) => (
-      isInput ? <i className="fa fa-chevron-down"></i> : <i className="fa fa-angle-down"></i>
+      isInput ? <i className="fa fa-caret-down"></i> : <i className="fa fa-caret-down"></i>
     ),
   }
   state = {
@@ -70,55 +70,56 @@ export default class SelectDropdown extends React.Component {
       <Popover
         placement="bottom-end"
       >
-        <div
-          className={getClassnames('blng-select-dropdown', {
-            'blng-select-dropdown--is-input': this.props.isInput,
-          }, this.props.className)}
-          onClick={() => { this.onDropdownOpen(); }}
-        >
+        <div className={this.props.isInput ? 'blng-select-dropdown__input' : 'blng-select-dropdown__text--option'}>
           <div
-            className={getClassnames('blng-select-dropdown__text', {
-              'blng-select-dropdown__text--disabled': this.props.isDisabled,
-            })}
+            className={getClassnames('blng-select-dropdown', {
+              'blng-select-dropdown--is-input': this.props.isInput,
+            }, this.props.className)}
+            onClick={() => { this.onDropdownOpen(); }}
           >
-            {
-              this.props.renderSelectedItem()
-            }
-          </div>
-          <Popover.TARGET>
             <div
-              className={getClassnames('blng-select-dropdown__dropdown-icon', {
-                'blng-select-dropdown__dropdown-icon--open': this.state.isOpen,
-                'blng-select-dropdown__dropdown-icon--disabled': this.props.isDisabled,
+              className={getClassnames('blng-select-dropdown__text', {
+                'blng-select-dropdown__text--disabled': this.props.isDisabled,
               })}
             >
-              {this.props.renderToggleIcon(this.props.isInput)}
+              {
+                this.props.renderSelectedItem()
+              }
             </div>
-          </Popover.TARGET>
-        </div>
-        <Popover.CONTENT
-          isOpen={this.state.isOpen}
-        >
-          <Popover.ARROW />
-          <div className="blng-select-dropdown__content">
-            {
-              this.props.items.map((item, index) => (
-                <div
-                  className="blng-select-dropdown__dropdown-item"
-                  onClick={() => {
-                    this.props.onSelect(item, index);
-                  }}
-                >
-                  {this.props.renderItem(item, index)}
-                </div>
-              ))
-            }
+            <Popover.TARGET>
+              <div
+                className={getClassnames('blng-select-dropdown__dropdown-icon', {
+                  'blng-select-dropdown__dropdown-icon--open': this.state.isOpen,
+                  'blng-select-dropdown__dropdown-icon--disabled': this.props.isDisabled,
+                })}
+              >
+                {this.props.renderToggleIcon(this.props.isInput)}
+              </div>
+            </Popover.TARGET>
           </div>
-        </Popover.CONTENT>
-        <Popover.OVERLAY
-          isOpen={this.state.isOpen}
-          onClick={() => { this.onDropdownClose(); }}
-        />
+          <Popover.CONTENT
+            isOpen={this.state.isOpen}
+          >
+            <div className="blng-select-dropdown__content">
+              {
+                this.props.items.map((item, index) => (
+                  <div
+                    className="blng-select-dropdown__dropdown-item"
+                    onClick={() => {
+                      this.props.onSelect(item, index);
+                    }}
+                  >
+                    {this.props.renderItem(item, index)}
+                  </div>
+                ))
+              }
+            </div>
+          </Popover.CONTENT>
+          <Popover.OVERLAY
+            isOpen={this.state.isOpen}
+            onClick={() => { this.onDropdownClose(); }}
+          />
+        </div>
       </Popover>
     );
   }

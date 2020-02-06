@@ -37,11 +37,7 @@
       box-sizing: border-box;
       height: 34px;
       line-height: 34px;
-      border-radius: 3px;
       color: $grey-11;
-      background-color: $grey-1;
-      background-image: linear-gradient(to bottom, white, $grey-1);
-      border: solid 1px $grey-4;
       text-align: center;
       transition: all 0.2s ease;
       i {
@@ -78,6 +74,9 @@
         }
       }
     }
+    .blng-popover__content {
+      left: 4px !important;
+    }
   }
 
   &__suggestions {
@@ -85,19 +84,8 @@
       min-height: 100px;
       box-sizing: border-box;
       width: 280px;
-      background: #FFF;
+      background: $white;
       padding: 10px;
-      .blng-suggestions__input {
-        margin-top: 10px;
-      }
-    }
-    &-help {
-      font-size: 14px;
-      line-height: 1.29;
-      text-align: left;
-      color: $grey-11;
-      border-bottom: solid 1px $grey-3;
-      padding-bottom: 5px;
     }
   }
   &__suggestions {

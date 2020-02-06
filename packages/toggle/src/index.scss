@@ -1,25 +1,30 @@
+@import '../../../scss/index.scss';
+
 .blng-toggle {
   position: relative;
   display: inline-block;
   width: 35px;
-  height: 20px;
+  height: 14px;
   &__input {
     opacity: 0;
     width: 0;
     height: 0;
     &:checked {
       + .blng-toggle__slider {
-        background-color: #4bc7d8;
+        background-color: $blue-3;
+        &::before {
+          background-color: $blue-6;
+        }
       }
       + .blng-toggle__slider:before {
-        -webkit-transform: translateX(15px);
-        -ms-transform: translateX(15px);
-        transform: translateX(15px);
+        -webkit-transform: translateX(18px);
+        -ms-transform: translateX(18px);
+        transform: translateX(18px);
       }
     }
     &:focus {
       + .blng-toggle__slider {
-        box-shadow: 0 0 1px #4bc7d8;
+        box-shadow: 0 0 1px $blue-3;
       }
     }
   }
@@ -30,16 +35,16 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: $grey-16;
     -webkit-transition: .4s;
     transition: .4s;
     &:before {
       position: absolute;
       content: "";
-      height: 16px;
-      width: 15px;
-      left: 2px;
-      bottom: 2px;
+      height: 19px;
+      width: 19px;
+      left: 0;
+      bottom: -2px;
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;
@@ -48,6 +53,7 @@
       border-radius: 34px;
       &:before {
         border-radius: 50%;
+        background-color: $grey-17;
       }
     }
   }

@@ -1,3 +1,5 @@
+@import '../../../scss/index.scss';
+
 $popoverZIndex: 10000;
 
 .blng-popover {
@@ -34,7 +36,7 @@ $popoverZIndex: 10000;
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
 
-      border-bottom: 8px solid #FFF;
+      border-bottom: 8px solid $white;
     }
   }
   &__target {

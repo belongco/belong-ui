@@ -15,7 +15,6 @@ import './index.scss';
 export default class SearchableSelect extends React.Component {
   static propTypes = {
     name: PropTypes.string,
-    helpText: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func,
     searchValue: PropTypes.string,
@@ -87,7 +86,7 @@ export default class SearchableSelect extends React.Component {
                   }
                 }}
               >
-                <i className="fa fa-chevron-down"></i>
+                <i className="fa fa-caret-down" />
               </div>
             </Popover.TARGET>
             <Popover.OVERLAY
@@ -102,15 +101,7 @@ export default class SearchableSelect extends React.Component {
               isOpen={this.state.isOpen}
               className="blng-searchable-select__content"
             >
-              <Popover.ARROW />
               <div className="blng-searchable-select__suggestions-container">
-                {
-                  this.props.helpText ? (
-                    <div className="blng-searchable-select__suggestions-help">
-                      {this.props.helpText}
-                    </div>
-                  ) : null
-                }
                 <div className="blng-searchable-select__suggestions-wrap">
                   <Suggestions
                     suggestions={this.props.suggestions}

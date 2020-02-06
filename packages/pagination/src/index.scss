@@ -1,23 +1,27 @@
+@import '../../../scss/index.scss';
+
 .blng-pagination {
 	display: flex;
 	list-style-type: none;
 	&__page {
-		margin: 0 5px 0 5px;
-		line-height: 1.4;
+		margin: 0 3px;
+		padding: 5px;
 		font-size: 14px;
+		border-radius: 14px;
 		&:hover {
-			color: #ed7040;
+			background-color: $grey-15;
 		}
 	}
 	&__page-first-last {
-		line-height: 1.2;
+		padding: 5px;
 		font-size: 14px;
+		border-radius: 14px;
 		&:hover {
-			color: #ed7040;
+			background-color: $grey-15;
 		}
 	}
 	&__page--selected {
-		color: #ed7040;
+		font-weight: bold;
 	}
 	&:hover {
 		cursor: pointer;
