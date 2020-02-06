@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/radiobox",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "belong-ui: Radiobox Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
