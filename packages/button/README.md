@@ -123,5 +123,37 @@
       </Button>
     </div>
   </div>
+  <br /><br />
+  <p>Small Button</p>
+  <br /><br />
+  <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+    <div>
+      <Button
+        variant="text"
+        onClick={() => { window.alert('Button Was Clicked'); }}
+        size="small"
+      >
+        <span>Simple Text Button</span>
+      </Button>
+    </div>
+    <div>
+      <Button
+        variant="outlined"
+        onClick={() => { window.alert('Button Was Clicked'); }}
+        size="small"
+      >
+        <span>Simple Outlined Button</span>
+      </Button>
+    </div>
+    <div>
+      <Button
+        variant="raised"
+        onClick={() => { window.alert('Button Was Clicked'); }}
+        size="small"
+      >
+        <span>Simple Raised Button</span>
+      </Button>
+    </div>
+  </div>
 </div>
 ```

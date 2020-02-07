@@ -34,7 +34,7 @@ export default class Button extends React.Component {
     dropdownListTemplate: PropTypes.func,
   };
   static defaultProps = {
-    variant: 'raised',
+    variant: 'outlined',
   };
 
   onClick = (e) => {
