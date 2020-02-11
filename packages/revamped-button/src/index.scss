@@ -1,0 +1,86 @@
+@import '../../../scss/index.scss';
+
+.r-blng-button {
+  box-sizing: border-box;
+  font-size: $standard-font-size;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  height: 40px;
+  padding: 0px 10px;
+  font-family: $font-family;
+  color: $grey-11;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  .fa {
+    margin-right: 5px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--size-small {
+    height: 30px;
+  }
+
+  &--variant-text {
+    background-color: $white;
+    color: $blue-7;
+    border: 0;
+    &:hover {
+      background-color: $blue-2;
+      box-shadow: 0 2px 4px rgba(190, 202, 206, 1);
+    }
+    &:active, &:focus {
+      color: $blue-7;
+      outline: $blue-8;
+      box-shadow: 0 2px 4px rgba(190, 202, 206, 1);
+    }
+  }
+
+  &--variant-outlined {
+    background-color: $white;
+    color: $blue-7;
+    border: solid 2px $blue-7;
+    &:hover {
+      background-color: $blue-2;
+      box-shadow: 0 2px 4px rgba(190, 202, 206, 1);
+    }
+    &:active, &:focus {
+      background-color: $blue-2;
+      color: $blue-7;
+      outline: $blue-8;
+      box-shadow: 0 2px 4px rgba(190, 202, 206, 1);
+    }
+  }
+
+  &--variant-raised {
+    background-color: $blue-7;
+    color: $white;
+    border: solid 2px $blue-7;
+    &:hover {
+      background-color: $blue-5;
+      border: solid 2px $blue-5;
+      box-shadow: 0 2px 4px rgba(190, 202, 206, 1);
+    }
+    &:active, &:focus {
+      background-color: $blue-7;
+      color: $white;
+      outline: $blue-8;
+      box-shadow: 0 2px 4px rgba(190, 202, 206, 1);
+    }
+  }
+
+  &--disabled {
+    background-color: $grey-12;
+    border-color: $grey-12;
+    color: $grey-13;
+    cursor: not-allowed;
+    &:hover {
+      box-shadow: none !important;
+      background-color: $grey-12;
+      border-color: $grey-12;
+      cursor: not-allowed;
+    }
+  }
+}

@@ -9,7 +9,7 @@ import './index.scss';
 /**
  * @example ../README.md
  */
-export default class Button extends React.Component {
+export default class RevampedButton extends React.Component {
   static propTypes = {
     name: PropTypes.string,
     className: PropTypes.string,
@@ -19,7 +19,7 @@ export default class Button extends React.Component {
       PropTypes.array,
     ]),
     size: PropTypes.oneOf(['small']),
-    type: PropTypes.oneOf(['brand', 'primary', 'warning', 'green']),
+    variant: PropTypes.oneOf(['text', 'outlined', 'raised']),
     onClick: PropTypes.func,
     isDisabled: PropTypes.bool,
     dropdownItems: PropTypes.array,
@@ -33,6 +33,9 @@ export default class Button extends React.Component {
     onKeyCodeTrigger: PropTypes.func,
     dropdownListTemplate: PropTypes.func,
   };
+  static defaultProps = {
+    variant: 'outlined',
+  };
 
   onClick = (e) => {
     if (!this.props.isDisabled && _.isFunction(this.props.onClick)) {
@@ -41,14 +44,14 @@ export default class Button extends React.Component {
   }
 
   render() {
-    const { size, type } = this.props;
+    const { size, variant } = this.props;
 
     return (
       <button
-        className={getClassnames('blng-button', this.props.className, {
-          [`blng-button--size-${size}`]: _.isString(size),
-          [`blng-button--type-${type}`]: _.isString(type),
-          'blng-button--disabled': this.props.isDisabled,
+        className={getClassnames('r-blng-button', this.props.className, {
+          [`r-blng-button--size-${size}`]: _.isString(size),
+          [`r-blng-button--variant-${variant}`]: _.isString(variant),
+          'r-blng-button--disabled': this.props.isDisabled,
         })}
         onClick={(e) => { this.onClick(e); }}
       >

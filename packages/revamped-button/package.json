@@ -1,17 +1,15 @@
 {
-  "name": "@belong-ui/suggestions",
+  "name": "@belong-ui/revamped-button",
   "version": "0.1.15",
-  "description": "belong-ui: suggestions Components",
+  "description": "belong-ui: Basic Button Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
   "author": "vivek kaarthek",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=suggestions"
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=revamped-button"
   },
   "dependencies": {
-    "@belong-ui/input": "^0.1.15",
-    "@belong-ui/loader": "^0.1.15",
     "classnames": "^2.2.5",
     "lodash": "^4.17.15",
     "prop-types": "^15.6.0",

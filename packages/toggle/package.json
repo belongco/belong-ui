@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/toggle",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "belong-ui: Toggle Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
