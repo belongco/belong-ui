@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/checkbox",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "belong-ui: Checkbox Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
