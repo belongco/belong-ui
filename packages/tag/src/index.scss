@@ -1,0 +1,23 @@
+@import '../../../scss/index.scss';
+
+.blng-tag {
+  display: flex;
+  width: fit-content;
+  border-radius: 5px;
+  background-color: $grey-18;
+  color: $purple-11;
+  padding: 6px 8px;
+  cursor: default;
+  span {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 2px;
+  }
+  i {
+    font-size: 14px;
+    margin: 0 2px;
+  }
+  &__clickable {
+    cursor: pointer;
+  }
+}

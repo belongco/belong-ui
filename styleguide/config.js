@@ -18,6 +18,11 @@ module.exports = {
         '../packages/pagination/src/index.js',
         '../packages/toggle/src/index.js',
         '../packages/tags-input/src/index.js',
+        '../packages/tabbed/src/index.js',
+        '../packages/tag/src/index.js',
+        '../packages/pill/src/index.js',
+        '../packages/modal/src/index.js',
+        '../packages/card/src/index.js',
       ]),
     },
     {

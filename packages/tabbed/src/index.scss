@@ -1,0 +1,27 @@
+@import '../../../scss/index.scss';
+
+.blng-tabbed {
+  display: flex;
+  justify-content: center;
+  &__vertical {
+    flex-direction: column;
+  }
+  &__item {
+    width: fit-content;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    text-transform: capitalize;
+    &-horizontal {
+      margin: 0 30px;
+    }
+    &-vertical {
+      margin: 12px 0;
+    }
+  }
+  .active {
+    border-bottom: 2px solid $blue-11;
+    color: $blue-11;
+  }
+}

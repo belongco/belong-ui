@@ -1,0 +1,30 @@
+@import '../../../scss/index.scss';
+
+.blng-pill {
+  display: flex;
+  width: fit-content;
+  border-radius: 25px;
+  padding: 6px 8px;
+  cursor: default;
+  span {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 3px;
+  }
+  i {
+    font-size: 14px;
+    margin: 0 3px;
+  }
+  &__clickable {
+    cursor: pointer;
+  }
+  &__raised {
+    border: 1px solid $blue-11;
+    background-color: $blue-11;
+    color: $white;
+  }
+  &__outlined {
+    border: 1px solid $blue-11;
+    color: $blue-11;
+  }
+}

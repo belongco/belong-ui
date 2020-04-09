@@ -1,0 +1,22 @@
+{
+  "name": "@belong-ui/pill",
+  "version": "0.1.16",
+  "description": "belong-ui: Pill Component",
+  "main": "dist/index.min.js",
+  "repository": "https://github.com/belongco/belong-ui",
+  "author": "saurabh gaur",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=pill"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.6.0",
+    "react": "16.8.0",
+    "react-dom": "16.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
