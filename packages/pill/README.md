@@ -18,7 +18,10 @@
   <br /><br />
   <div>With - Icon</div>
   <br />
-  <Pill>
+  <Pill
+    isClickable
+    onClick={() => { alert('Pills clicked'); }}
+  >
     <i className="fa fa-file" />
     <span>Bangalore</span>
   </Pill>
