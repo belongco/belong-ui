@@ -4,26 +4,45 @@
   display: flex;
   width: fit-content;
   border-radius: 5px;
-  background-color: $grey-18;
-  color: $purple-11;
   padding: 6px 8px;
   cursor: default;
-  span {
-    font-size: 14px;
+  background-color: #f3f7f8;
+  color: #7f82bf;
+  font-weight: 600;
+  align-items: center;
+  &__warning {
+    background-color: #fff0ca;
+    color: #b07207;
     font-weight: 600;
-    margin: 0 2px;
   }
-  i {
-    font-size: 14px;
-    margin: 0 2px;
+  &__removable {
+    background-color: #f5f5f5;
+    color: #333333;
+    font-weight: unset;
   }
   &__clickable {
+    background-color: #e5f8ff;
+    color: #118ca3;
+    font-weight: 600;
     cursor: pointer;
+  }
+  i {
+    font-size: 12px;
+    margin: 0 2px;
+  }
+  span {
+    font-size: 14px;
+    margin: 0 2px;
   }
   &__hoverable {
     &:hover {
       cursor: pointer;
       box-shadow: $box-shadow-card-2;
+    }
+  }
+  &__icon-clickable {
+    i {
+      cursor: pointer;
     }
   }
 }

@@ -5,37 +5,53 @@ initialState = {
   isDropdownOpen: false,
 };
 <div className="styleguidist__input-wrap">
-  <div>Without Clickable</div>
+  <div>Read Only</div>
   <br />
-  <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-    <Tag>
-      <span>Bangalore</span>
-    </Tag>
-    <Tag
-      isHoverable
-    >
-      <span>Bangalore</span>
-    </Tag>
-  </div>
+  <Tag
+    variant="default"
+  >
+    <span>Bangalore</span>
+  </Tag>
   <br /><br />
-  <div>With Clickable</div>
+  <div>Read Only/Status/Amber</div>
   <br />
-  <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-    <Tag
-      isClickable
-      onClick={(e) => { setState({ isDropdownOpen: !state.isDropdownOpen }) }}
-    >
-      <span>Bangalore</span>
-      {state.isDropdownOpen ? <i className="fa fa-chevron-up" /> : <i className="fa fa-chevron-down" />}
-    </Tag>
-    <Tag
-      isClickable
-      isHoverable
-      onClick={(e) => { setState({ isDropdownOpen: !state.isDropdownOpen }) }}
-    >
-      <span>Bangalore</span>
-      {state.isDropdownOpen ? <i className="fa fa-chevron-up" /> : <i className="fa fa-chevron-down" />}
-    </Tag>
-  </div>
+  <Tag
+    variant="warning"
+  >
+    <span>Bangalore</span>
+  </Tag>
+  <br /><br />
+  <div>Actionable tag</div>
+  <br />
+  <Tag
+    icon="fa fa-plus"
+    isHoverable
+    isClickable
+  >
+    <span>4 More</span>
+  </Tag>
+  <br /><br />
+  <div>Actionable tag - With Icon—Right </div>
+  <br />
+  <Tag
+    icon="fa fa-angle-double-down"
+    iconPlacement="right"
+    isHoverable
+    isClickable
+  >
+    <span>Bangalore</span>
+  </Tag>
+  <br /><br />
+  <div>Removable tag </div>
+  <br />
+  <Tag
+    variant="removable"
+    icon="fa fa-times"
+    iconPlacement="right"
+    isIconClickable
+    onIconClick={(e) => { alert('click on icon'); }}
+  >
+    <span>Bangalore</span>
+  </Tag>
 </div>
 ```
