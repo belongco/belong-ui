@@ -16,11 +16,11 @@ export default class Card extends React.Component {
       PropTypes.array,
     ]),
     isClickable: PropTypes.bool,
-    isHover: PropTypes.bool,
+    isHoverable: PropTypes.bool,
   };
   static defaultProps = {
     isClickable: false,
-    isHover: false,
+    isHoverable: false,
   }
   state = {};
 
@@ -28,7 +28,7 @@ export default class Card extends React.Component {
     return (
       <div
         className={getClassnames('blng-card', {
-          'blng-card__hover': this.props.isHover,
+          'blng-card__hover': this.props.isHoverable,
           'blng-card__clickable': this.props.isClickable,
         })}
       >

@@ -18,6 +18,7 @@ export default class Tag extends React.Component {
       PropTypes.array,
     ]),
     isClickable: PropTypes.bool,
+    isHoverable: PropTypes.bool,
     onClick: PropTypes.func,
   };
   static defaultProps = {
@@ -32,12 +33,13 @@ export default class Tag extends React.Component {
   }
 
   render() {
-    const { className, children, isClickable } = this.props;
+    const { className, children, isClickable, isHoverable } = this.props;
 
     return (
       <div
-        className={getClassNames('blng-tag', className, {
+        className={getClassNames(`blng-tag${!_.isNull(className) ? ` ${className}` : ''}`, {
           'blng-tag__clickable': isClickable,
+          'blng-tag__hoverable': isHoverable,
         })}
         onClick={(e) => { this.onClick(e); }}
       >

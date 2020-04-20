@@ -14,34 +14,34 @@ import './index.scss';
 export default class Modal extends Component {
   static propTypes = {
     title: PropTypes.string,
-    isCloseOption: PropTypes.bool,
-    onKeyDown: PropTypes.func,
-    onModalClose: PropTypes.func,
+    hideCloseIcon: PropTypes.bool,
+    onEscape: PropTypes.func,
+    onClose: PropTypes.func,
     children: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
       PropTypes.array,
     ]),
     type: PropTypes.oneOf(['light', 'dark']),
-    isModalOpen: PropTypes.bool,
+    isOpen: PropTypes.bool,
   };
   static defaultProps = {
     type: 'dark',
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', this.onKeyDown, false);
+    document.addEventListener('keydown', this.onEscape, false);
     document.addEventListener('click', this.onClick, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.onKeyDown, false);
+    document.removeEventListener('keydown', this.onEscape, false);
     document.removeEventListener('click', this.onClick, false);
   }
 
-  onKeyDown = (event) => {
+  onEscape = (event) => {
     if (event.keyCode === keyCodes.ESCAPE) {
-      this.props.onKeyDown(event);
+      this.props.onEscape(event);
     }
   }
 
@@ -49,17 +49,17 @@ export default class Modal extends Component {
     const element = document.getElementById('blng-modal__overflow');
 
     if (element === event.target) {
-      this.props.onKeyDown(event);
+      this.props.onEscape(event);
     }
   }
 
   render() {
-    const { title, onModalClose, children, type, isCloseOption, isModalOpen } = this.props;
+    const { title, onClose, children, type, hideCloseIcon, isOpen } = this.props;
 
     return (
       <div
         className={getClassnames('blng-modal', {
-          'blng-modal__closed': !isModalOpen,
+          'blng-modal__closed': !isOpen,
         })}
       >
         <div
@@ -68,10 +68,10 @@ export default class Modal extends Component {
         >
           <div className="blng-modal__content-header">
             <div className="blng-modal__content-header__title">{_.isString(title) ? title : null}</div>
-            {isCloseOption ? (
+            {hideCloseIcon ? (
               <span
                 className="blng-modal__content-header__close"
-                onClick={() => { onModalClose(); }}
+                onClick={() => { onClose(); }}
               >
                 &times;
               </span>
@@ -81,7 +81,7 @@ export default class Modal extends Component {
             {children}
           </div>
         </div>
-        {isModalOpen ? (
+        {isOpen ? (
           <div
             className={getClassnames('blng-modal__overflow', {
               [`blng-modal__overflow-type-${type}`]: type,

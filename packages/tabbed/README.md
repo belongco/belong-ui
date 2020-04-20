@@ -8,7 +8,7 @@ const suggestions = [
 ];
 
 initialState = {
-  selectedTab: 1,
+  activeTabIndex: 1,
 };
 
 <div className="styleguidist__input-wrap">
@@ -16,19 +16,19 @@ initialState = {
   <br />
   <Tabbed
     tabs={suggestions}
-    selectedTab={state.selectedTab}
+    activeTabIndex={state.activeTabIndex}
     onClick={(event) => {
       setState({
-        selectedTab: event.id,
+        activeTabIndex: event.id,
       });
     }}
   />
   <div style={{ width: 'fit-content', margin: '30px auto' }}>
-    {state.selectedTab === 1 ? (
+    {state.activeTabIndex === 1 ? (
       <div>First</div>
-    ) : state.selectedTab === 2 ? (
+    ) : state.activeTabIndex === 2 ? (
       <div>Second</div>
-    ) : state.selectedTab === 3 ? (
+    ) : state.activeTabIndex === 3 ? (
       <div>Third</div>
     ) : null}
   </div>
@@ -37,21 +37,21 @@ initialState = {
   <br />
   <div style={{ display: 'flex' }}>
     <Tabbed
-      isVertical
+      vertical
       tabs={suggestions}
-      selectedTab={state.selectedTab}
+      activeTabIndex={state.activeTabIndex}
       onClick={(event) => {
         setState({
-          selectedTab: event.id,
+          activeTabIndex: event.id,
         });
       }}
     />
     <div style={{ width: 'fit-content', margin: '30px auto' }}>
-      {state.selectedTab === 1 ? (
+      {state.activeTabIndex === 1 ? (
         <div>First</div>
-      ) : state.selectedTab === 2 ? (
+      ) : state.activeTabIndex === 2 ? (
         <div>Second</div>
-      ) : state.selectedTab === 3 ? (
+      ) : state.activeTabIndex === 3 ? (
         <div>Third</div>
       ) : null}
     </div>

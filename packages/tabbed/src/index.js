@@ -11,14 +11,14 @@ import './index.scss';
  */
 export default class Tabbed extends React.Component {
   static propTypes = {
-    isVertical: PropTypes.bool,
+    vertical: PropTypes.bool,
     tabs: PropTypes.array,
-    selectedTab: PropTypes.number,
+    activeTabIndex: PropTypes.number,
     onClick: PropTypes.func,
   };
   static defaultProps = {
-    selectedTab: 1,
-    isVertical: false,
+    activeTabIndex: 1,
+    vertical: false,
   }
   state = {};
 
@@ -26,16 +26,16 @@ export default class Tabbed extends React.Component {
     return (
       <div
         className={getClassnames('blng-tabbed', {
-          'blng-tabbed__vertical': this.props.isVertical,
+          'blng-tabbed__vertical': this.props.vertical,
         })}
       >
         {_.map(this.props.tabs, (tab, index) => (
           <div
             key={index}
             className={getClassnames('blng-tabbed__item', {
-              'blng-tabbed__item-horizontal': !this.props.isVertical,
-              'blng-tabbed__item-vertical': this.props.isVertical,
-              active: index + 1 === this.props.selectedTab,
+              'blng-tabbed__item-horizontal': !this.props.vertical,
+              'blng-tabbed__item-vertical': this.props.vertical,
+              active: index + 1 === this.props.activeTabIndex,
             })}
             onClick={() => { this.props.onClick(tab); }}
           >

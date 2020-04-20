@@ -7,7 +7,7 @@
   <Card
     isClickable
     onClick={() => { alert('card click'); }}
-    isHover
+    isHoverable
   >
     <div style={{ width: '200px', padding: '10px' }}>
       <div style={{ fontSize: '20px', fontWeight: '500' }}>Card title</div>

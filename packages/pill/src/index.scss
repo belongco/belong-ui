@@ -18,6 +18,12 @@
   &__clickable {
     cursor: pointer;
   }
+  &__hoverable {
+    &:hover {
+      cursor: pointer;
+      box-shadow: $box-shadow-card-2;
+    }
+  }
   &__raised {
     border: 1px solid $blue-11;
     background-color: $blue-11;

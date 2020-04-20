@@ -11,15 +11,15 @@ initialState = {
   <br /><br />
   <div>
     <Modal
-      isModalOpen={state.isModalWithCloseButton}
-      isCloseOption
+      isOpen={state.isModalWithCloseButton}
+      hideCloseIcon
       type="dark"
       title="Modal Title"
       position="center"
-      onKeyDown={(event) => {
+      onEscape={(event) => {
         setState({ isModalWithCloseButton: false });
       }}
-      onModalClose={() => {
+      onClose={() => {
         setState({ isModalWithCloseButton: false });
       }}
     >
@@ -42,13 +42,13 @@ initialState = {
   <br /><br />
   <div>
     <Modal
-      isModalOpen={state.isModalWithoutCloseButton}
+      isOpen={state.isModalWithoutCloseButton}
       type="light"
       position="center"
-      onKeyDown={(event) => {
+      onEscape={(event) => {
         setState({ isModalWithoutCloseButton: false });
       }}
-      onModalClose={() => {
+      onClose={() => {
         setState({ isModalWithoutCloseButton: false });
       }}
     >

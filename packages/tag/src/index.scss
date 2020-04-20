@@ -20,4 +20,10 @@
   &__clickable {
     cursor: pointer;
   }
+  &__hoverable {
+    &:hover {
+      cursor: pointer;
+      box-shadow: $box-shadow-card-2;
+    }
+  }
 }

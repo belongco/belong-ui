@@ -19,6 +19,7 @@ export default class Pill extends React.Component {
       PropTypes.array,
     ]),
     isClickable: PropTypes.bool,
+    isHoverable: PropTypes.bool,
     onClick: PropTypes.func,
   };
   static defaultProps = {
@@ -34,13 +35,14 @@ export default class Pill extends React.Component {
   }
 
   render() {
-    const { className, children, variant, isClickable } = this.props;
+    const { className, children, variant, isClickable, isHoverable } = this.props;
 
     return (
       <div
         className={getClassNames('blng-pill', className, {
           [`blng-pill__${variant}`]: _.isString(variant),
           'blng-pill__clickable': isClickable,
+          'blng-pill__hoverable': isHoverable,
         })}
         onClick={(e) => { this.onClick(e); }}
       >
