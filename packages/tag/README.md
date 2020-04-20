@@ -25,9 +25,7 @@ initialState = {
   <br />
   <Tag
     icon={<i className="fa fa-plus" />}
-    isHoverable
     onHover={(e) => { alert('Hover on Actionable tag'); }}
-    isClickable
     onClick={(e) => { alert('Click on Actionable tag'); }}
   >
     <span>4 More</span>
@@ -38,9 +36,7 @@ initialState = {
   <Tag
     icon={<i className="fa fa-angle-double-down" />}
     iconPlacement="right"
-    isHoverable
     onHover={(e) => { alert('Hover on Actionable tag'); }}
-    isClickable
     onClick={(e) => { alert('Click on Actionable tag'); }}
   >
     <span>Bangalore</span>

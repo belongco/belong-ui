@@ -26,17 +26,17 @@
     font-weight: 600;
     cursor: pointer;
   }
-  &__placement {
-    &-left {
-      flex-direction: row;
-    }
-    &-right {
-      flex-direction: row-reverse;
-    }
-  }
   &__icon {
     font-size: 12px;
     margin: 0 2px;
+    &-placement {
+      &_left {
+        flex-direction: row;
+      }
+      &_right {
+        flex-direction: row-reverse;
+      }
+    }
   }
   &__content {
     font-size: 14px;

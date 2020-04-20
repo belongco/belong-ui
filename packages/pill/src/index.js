@@ -12,41 +12,69 @@ import './index.scss';
 export default class Pill extends React.Component {
   static propTypes = {
     className: PropTypes.string,
-    variant: PropTypes.oneOf(['outlined', 'raised']),
+    variant: PropTypes.oneOf(['default', 'success', 'warning', 'critical', 'tab', 'counter', 'step']),
     children: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
       PropTypes.array,
     ]),
-    isClickable: PropTypes.bool,
-    isHoverable: PropTypes.bool,
+    icon: PropTypes.element,
+    iconPlacement: PropTypes.oneOf(['left', 'right']),
+    stepIndex: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+    isActive: PropTypes.bool,
     onClick: PropTypes.func,
+    onHover: PropTypes.func,
   };
   static defaultProps = {
-    variant: 'raised',
-    isClickable: false,
+    variant: 'default',
+    iconPlacement: 'left',
   }
   state = {};
 
   onClick = (e) => {
-    if (this.props.isClickable && _.isFunction(this.props.onClick)) {
+    if (_.isFunction(this.props.onClick)) {
       this.props.onClick(e);
     }
   }
 
+  onHover = (e) => {
+    if (_.isFunction(this.props.onHover)) {
+      this.props.onHover(e);
+    }
+  }
+
   render() {
-    const { className, children, variant, isClickable, isHoverable } = this.props;
+    const { className, children, variant, icon, iconPlacement, stepIndex, isActive, onClick, onHover } = this.props;
 
     return (
       <div
-        className={getClassNames('blng-pill', className, {
-          [`blng-pill__${variant}`]: _.isString(variant),
-          'blng-pill__clickable': isClickable,
-          'blng-pill__hoverable': isHoverable,
+        className={getClassNames('blng-pill', {
+          [`blng-pill__variant-${variant}`]: _.isString(variant),
+          [`blng-pill__icon-placement_${iconPlacement}`]: _.isString(iconPlacement),
+          [`blng-pill__variant-${variant}-active`]: isActive,
+          'blng-pill__clickable': _.isFunction(onClick),
+          'blng-pill__hoverable': _.isFunction(onHover),
+          [className]: !_.isEmpty(className),
         })}
         onClick={(e) => { this.onClick(e); }}
+        onMouseOver={(e) => { this.onHover(e); }}
       >
-        {children}
+        {icon && (
+          <div className="blng-pill__icon">{icon}</div>
+        )}
+        {stepIndex && (
+          <div
+            className={getClassNames('blng-pill__step-index', {
+              'blng-pill__step-index__active': isActive,
+            })}
+          >
+            {stepIndex}
+          </div>
+        )}
+        <div className="blng-pill__content">{children}</div>
       </div>
     );
   }

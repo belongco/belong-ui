@@ -6,14 +6,75 @@
   border-radius: 25px;
   padding: 6px 8px;
   cursor: default;
-  span {
+  &__variant {
+    &-default {
+      background-color: #f6f6f6;
+      color: #6e7272;
+    }
+    &-success {
+      background-color: #d7f5ed;
+      color: #00a678;
+    }
+    &-warning {
+      background-color: #fff0ca;
+      color: #b07207;
+    }
+    &-critical {
+      background-color: #ffd4d4;
+      color: #e84f51;
+    }
+    &-tab {
+      background-color: #ffffff;
+      border: 1px solid #35a3b8;
+      color: #35a3b8;
+      &-active {
+        background-color: #35a3b8;
+        color: #ffffff;
+      }
+    }
+    &-counter {
+      background-color: #dbdfe0;
+      color: #6f7995;
+    }
+    &-step {
+      background-color: #f6f6f6;
+      color: #858b9b;
+      &-active {
+        background-color: #e5f8ff;
+        color: #35a3b8;
+      }
+    }
+  }
+  &__icon {
+    font-size: 14px;
+    margin: 0 3px;
+    &-placement {
+      &_right {
+        flex-direction: row-reverse;
+      }
+      &_left {
+        flex-direction: row;
+      }
+    }
+  }
+  &__content {
     font-size: 14px;
     font-weight: bold;
     margin: 0 3px;
   }
-  i {
-    font-size: 14px;
-    margin: 0 3px;
+  &__step-index {
+    height: 14px;
+    width: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #858b9b;
+    border-radius: 25px;
+    text-align: center;
+    margin: 0 2px;
+    &__active {
+      background-color: #82c0cc;
+    }
   }
   &__clickable {
     cursor: pointer;
@@ -23,14 +84,5 @@
       cursor: pointer;
       box-shadow: $box-shadow-card-2;
     }
-  }
-  &__raised {
-    border: 1px solid $blue-11;
-    background-color: $blue-11;
-    color: $white;
-  }
-  &__outlined {
-    border: 1px solid $blue-11;
-    color: $blue-11;
   }
 }
