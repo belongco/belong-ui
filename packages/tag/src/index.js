@@ -19,18 +19,17 @@ export default class Tag extends React.Component {
       PropTypes.element,
       PropTypes.array,
     ]),
-    icon: PropTypes.string,
+    icon: PropTypes.element,
     iconPlacement: PropTypes.oneOf(['left', 'right']),
-    isIconClickable: PropTypes.bool,
     onIconClick: PropTypes.func,
     isClickable: PropTypes.bool,
     isHoverable: PropTypes.bool,
     onClick: PropTypes.func,
+    onHover: PropTypes.func,
   };
   static defaultProps = {
     iconPlacement: 'left',
     isClickable: false,
-    isIconClickable: false,
   }
   state = {};
 
@@ -40,46 +39,29 @@ export default class Tag extends React.Component {
     }
   }
 
-  onIconClick = (e) => {
-    if (this.props.isIconClickable && _.isFunction(this.props.onIconClick)) {
-      this.props.onIconClick(e);
+  onHover = (e) => {
+    if (this.props.isHoverable && _.isFunction(this.props.onHover)) {
+      this.props.onHover(e);
     }
   }
 
   render() {
-    const { variant, className, icon, iconPlacement, isIconClickable, children, isClickable, isHoverable } = this.props;
+    const { variant, className, icon, iconPlacement, children, isClickable, isHoverable } = this.props;
 
     return (
       <div
-        className={getClassNames(`blng-tag${!_.isEmpty(className) ? ` ${className}` : ''}`, {
+        className={getClassNames('blng-tag', {
           [`blng-tag__${variant}`]: _.isString(variant),
           'blng-tag__clickable': isClickable,
           'blng-tag__hoverable': isHoverable,
-          'blng-tag__icon-clickable': isIconClickable,
+          [`blng-tag__placement-${iconPlacement}`]: iconPlacement,
+          [className]: !_.isEmpty(className),
         })}
         onClick={(e) => { this.onClick(e); }}
+        onMouseOver={(e) => { this.onHover(e); }}
       >
-        {iconPlacement === 'left' ? (
-          _.isString(icon) ? (
-            <React.Fragment>
-              <i
-                className={icon}
-                onClick={(e) => { this.onIconClick(e); }}
-              />
-              {children}
-            </React.Fragment>
-          ) : children
-        ) : (
-          _.isString(icon) ? (
-            <React.Fragment>
-              {children}
-              <i
-                className={icon}
-                onClick={(e) => { this.onIconClick(e); }}
-              />
-            </React.Fragment>
-          ) : children
-        )}
+        <div className="blng-tag__icon">{icon}</div>
+        <div className="blng-tag__content">{children}</div>
       </div>
     );
   }

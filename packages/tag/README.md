@@ -24,9 +24,11 @@ initialState = {
   <div>Actionable tag</div>
   <br />
   <Tag
-    icon="fa fa-plus"
+    icon={<i className="fa fa-plus" />}
     isHoverable
+    onHover={(e) => { alert('Hover on Actionable tag'); }}
     isClickable
+    onClick={(e) => { alert('Click on Actionable tag'); }}
   >
     <span>4 More</span>
   </Tag>
@@ -34,10 +36,12 @@ initialState = {
   <div>Actionable tag - With Icon—Right </div>
   <br />
   <Tag
-    icon="fa fa-angle-double-down"
+    icon={<i className="fa fa-angle-double-down" />}
     iconPlacement="right"
     isHoverable
+    onHover={(e) => { alert('Hover on Actionable tag'); }}
     isClickable
+    onClick={(e) => { alert('Click on Actionable tag'); }}
   >
     <span>Bangalore</span>
   </Tag>
@@ -46,10 +50,8 @@ initialState = {
   <br />
   <Tag
     variant="removable"
-    icon="fa fa-times"
+    icon={<i className="fa fa-times" />}
     iconPlacement="right"
-    isIconClickable
-    onIconClick={(e) => { alert('click on icon'); }}
   >
     <span>Bangalore</span>
   </Tag>

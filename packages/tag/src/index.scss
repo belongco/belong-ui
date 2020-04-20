@@ -6,31 +6,39 @@
   border-radius: 5px;
   padding: 6px 8px;
   cursor: default;
-  background-color: #f3f7f8;
-  color: #7f82bf;
+  background-color: $grey-18;
+  color: $purple-11;
   font-weight: 600;
   align-items: center;
   &__warning {
-    background-color: #fff0ca;
-    color: #b07207;
+    background-color: $yellow-2;
+    color: $yellow-10;
     font-weight: 600;
   }
   &__removable {
-    background-color: #f5f5f5;
-    color: #333333;
+    background-color: $grey-1;
+    color: $grey-11;
     font-weight: unset;
   }
   &__clickable {
-    background-color: #e5f8ff;
-    color: #118ca3;
+    background-color: $blue-12;
+    color: $blue-13;
     font-weight: 600;
     cursor: pointer;
   }
-  i {
+  &__placement {
+    &-left {
+      flex-direction: row;
+    }
+    &-right {
+      flex-direction: row-reverse;
+    }
+  }
+  &__icon {
     font-size: 12px;
     margin: 0 2px;
   }
-  span {
+  &__content {
     font-size: 14px;
     margin: 0 2px;
   }
@@ -38,11 +46,6 @@
     &:hover {
       cursor: pointer;
       box-shadow: $box-shadow-card-2;
-    }
-  }
-  &__icon-clickable {
-    i {
-      cursor: pointer;
     }
   }
 }
