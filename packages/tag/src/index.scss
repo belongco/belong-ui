@@ -1,0 +1,51 @@
+@import '../../../scss/index.scss';
+
+.blng-tag {
+  display: flex;
+  width: fit-content;
+  border-radius: 5px;
+  padding: 6px 8px;
+  cursor: default;
+  background-color: $grey-18;
+  color: $purple-11;
+  font-weight: 600;
+  align-items: center;
+  &__warning {
+    background-color: $yellow-2;
+    color: $yellow-10;
+    font-weight: 600;
+  }
+  &__removable {
+    background-color: $grey-1;
+    color: $grey-11;
+    font-weight: unset;
+  }
+  &__clickable {
+    background-color: $blue-12;
+    color: $blue-13;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  &__icon {
+    font-size: 12px;
+    margin: 0 2px;
+    &-placement {
+      &_left {
+        flex-direction: row;
+      }
+      &_right {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+  &__content {
+    font-size: 14px;
+    margin: 0 2px;
+  }
+  &__hoverable {
+    &:hover {
+      cursor: pointer;
+      box-shadow: $box-shadow-card-2;
+    }
+  }
+}

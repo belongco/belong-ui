@@ -1,0 +1,57 @@
+@import '../../../scss/index.scss';
+
+.blng-tabbed {
+  display: flex;
+  &__horizontalTop {
+    flex-direction: column;
+  }
+  &__horizontalBottom {
+    flex-direction: column-reverse;
+  }
+  &__verticalLeft {
+    flex-direction: row;
+    .blng-tabbed__header {
+      flex-direction: column;
+      &-item {
+        margin: 10px 0;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  &__verticalRight {
+    flex-direction: row-reverse;
+    .blng-tabbed__header {
+      flex-direction: column;
+      &-item {
+        margin: 10px 0;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    &-item {
+      width: fit-content;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid transparent;
+      text-transform: capitalize;
+      &__active {
+        border-bottom: 2px solid $blue-11;
+        color: $blue-11;
+      }
+    }
+  }
+  &__content {
+    margin: 10px;
+  }
+}
