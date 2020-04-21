@@ -11,37 +11,50 @@ import './index.scss';
  */
 export default class Tabbed extends React.Component {
   static propTypes = {
-    vertical: PropTypes.bool,
-    tabs: PropTypes.array,
+    headers: PropTypes.array,
+    panes: PropTypes.array,
+    layout: PropTypes.oneOf(['horizontalTop', 'horizontalBottom', 'verticalLeft', 'verticalRight']),
     activeTabIndex: PropTypes.number,
-    onClick: PropTypes.func,
+    onActiveTabChange: PropTypes.func,
   };
   static defaultProps = {
-    activeTabIndex: 1,
-    vertical: false,
+    layout: 'horizontalTop',
+    activeTabIndex: 0,
   }
-  state = {};
+  state = {
+    activeTabIndex: this.props.activeTabIndex || 0,
+  };
 
   render() {
+    const { headers, panes, layout, activeTabIndex, onActiveTabChange } = this.props;
+
     return (
       <div
         className={getClassnames('blng-tabbed', {
-          'blng-tabbed__vertical': this.props.vertical,
+          [`blng-tabbed__${layout}`]: _.isString(layout),
         })}
       >
-        {_.map(this.props.tabs, (tab, index) => (
-          <div
-            key={index}
-            className={getClassnames('blng-tabbed__item', {
-              'blng-tabbed__item-horizontal': !this.props.vertical,
-              'blng-tabbed__item-vertical': this.props.vertical,
-              active: index + 1 === this.props.activeTabIndex,
-            })}
-            onClick={() => { this.props.onClick(tab); }}
-          >
-            {tab.title}
-          </div>
-        ))}
+        <div className="blng-tabbed__header">
+          {_.map(headers, (header, index) => (
+            <div
+              key={index}
+              className={getClassnames('blng-tabbed__header-item', {
+                'blng-tabbed__header-item__active': _.isEqual(activeTabIndex, index),
+              })}
+              onClick={() => {
+                this.setState({
+                  activeTabIndex: index,
+                });
+                onActiveTabChange(index);
+              }}
+            >
+              {header}
+            </div>
+          ))}
+        </div>
+        <div className="blng-tabbed__content">
+          {panes[activeTabIndex]}
+        </div>
       </div>
     );
   }
