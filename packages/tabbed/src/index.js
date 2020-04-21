@@ -16,6 +16,7 @@ export default class Tabbed extends React.Component {
     layout: PropTypes.oneOf(['horizontalTop', 'horizontalBottom', 'verticalLeft', 'verticalRight']),
     activeTabIndex: PropTypes.number,
     onActiveTabChange: PropTypes.func,
+    className: PropTypes.string,
   };
   static defaultProps = {
     layout: 'horizontalTop',
@@ -26,12 +27,13 @@ export default class Tabbed extends React.Component {
   };
 
   render() {
-    const { headers, panes, layout, activeTabIndex, onActiveTabChange } = this.props;
+    const { headers, panes, layout, className, activeTabIndex, onActiveTabChange } = this.props;
 
     return (
       <div
         className={getClassnames('blng-tabbed', {
           [`blng-tabbed__${layout}`]: _.isString(layout),
+          className: !_.isEmpty(className),
         })}
       >
         <div className="blng-tabbed__header">
