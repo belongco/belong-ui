@@ -38,7 +38,6 @@
     background-color: $white;
     overflow-x: hidden;
     transition: 0.5s;
-    padding: 20px;
     box-shadow: $box-shadow-modal;
     width: 840px;
     margin: auto;
@@ -47,6 +46,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      &-content {
+        padding: 10px;
+        background-color: #f5f5f5;
+      }
       &__close {
         font-size: 20px;
         font-weight: 500;
@@ -54,14 +57,15 @@
         color: $grey-10;
       }
       &__title {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
-        color: $grey-10;
+        color: #333;
+        margin: 0 auto;
         text-transform: capitalize;
       }
     }
     &-body {
-      margin-top: 20px;
+      padding: 20px;
     }
   }
 }

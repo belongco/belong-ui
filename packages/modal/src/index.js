@@ -34,6 +34,12 @@ export default class Modal extends Component {
     document.addEventListener('click', this.onClick, false);
   }
 
+  componentWillReceiveProps(nextProps, preProps) {
+    if (!_.isEqual(nextProps.isOpen, preProps.isOpen) && nextProps.isOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
   componentWillUnmount() {
     document.removeEventListener('keydown', this.onEscape, false);
     document.removeEventListener('click', this.onClick, false);
@@ -41,6 +47,7 @@ export default class Modal extends Component {
 
   onEscape = (event) => {
     if (event.keyCode === keyCodes.ESCAPE) {
+      document.body.style.overflow = 'auto';
       this.props.onEscape(event);
     }
   }
@@ -49,12 +56,20 @@ export default class Modal extends Component {
     const element = document.getElementById('blng-modal__overflow');
 
     if (element === event.target) {
+      document.body.style.overflow = 'auto';
       this.props.onEscape(event);
     }
   }
 
+  onClose = () => {
+    if (_.isFunction(this.props.onClose)) {
+      document.body.style.overflow = 'auto';
+      this.props.onClose();
+    }
+  }
+
   render() {
-    const { title, onClose, children, type, hideCloseIcon, isOpen } = this.props;
+    const { title, children, type, hideCloseIcon, isOpen } = this.props;
 
     return (
       <div
@@ -66,12 +81,18 @@ export default class Modal extends Component {
           className="blng-modal__content"
           id="blng-modal__content"
         >
-          <div className="blng-modal__content-header">
-            <div className="blng-modal__content-header__title">{_.isString(title) ? title : null}</div>
+          <div
+            className={getClassnames('blng-modal__content-header', {
+              'blng-modal__content-header-content': _.isString(title),
+            })}
+          >
+            {title && (
+              <div className="blng-modal__content-header__title">{title}</div>
+            )}
             {hideCloseIcon ? (
               <span
                 className="blng-modal__content-header__close"
-                onClick={() => { onClose(); }}
+                onClick={() => { this.onClose(); }}
               >
                 &times;
               </span>
