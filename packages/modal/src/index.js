@@ -26,6 +26,7 @@ export default class Modal extends Component {
     isOpen: PropTypes.bool,
   };
   static defaultProps = {
+    hideCloseIcon: false,
     type: 'dark',
   };
 
@@ -81,11 +82,7 @@ export default class Modal extends Component {
           className="blng-modal__content"
           id="blng-modal__content"
         >
-          <div
-            className={getClassnames('blng-modal__content-header', {
-              'blng-modal__content-header-content': _.isString(title),
-            })}
-          >
+          <div className="blng-modal__content-header">
             {title && (
               <div className="blng-modal__content-header__title">{title}</div>
             )}

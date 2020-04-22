@@ -42,14 +42,12 @@
     width: 840px;
     margin: auto;
     border-radius: 4px;
+    padding: 20px;
+    border-top: 4px solid $orange-5;
     &-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      &-content {
-        padding: 10px;
-        background-color: #f5f5f5;
-      }
       &__close {
         font-size: 20px;
         font-weight: 500;
@@ -57,15 +55,11 @@
         color: $grey-10;
       }
       &__title {
-        font-size: 18px;
-        font-weight: 500;
-        color: #333;
-        margin: 0 auto;
+        font-size: 14px;
+        font-weight: 600;
+        color: $grey-19;
         text-transform: capitalize;
       }
-    }
-    &-body {
-      padding: 20px;
     }
   }
 }
