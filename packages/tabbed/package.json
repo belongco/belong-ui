@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/tabbed",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "belong-ui: Tabbed Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
