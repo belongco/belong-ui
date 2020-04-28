@@ -102,7 +102,7 @@ export default class SelectDropdown extends React.Component {
           >
             <div className="blng-select-dropdown__content">
               {
-                this.props.items.map((item, index) => (
+                _.map(this.props.items, (item, index) => (
                   <div
                     className="blng-select-dropdown__dropdown-item"
                     onClick={() => {
