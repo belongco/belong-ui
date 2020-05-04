@@ -13,8 +13,8 @@ initialState = {
 };
 
 <div className="styleguidist__input-wrap">
-  <div>Horizontal Tabs</div>
-  <br />
+  <div>Active Position passing from props</div>
+  <br /><br />
   <Tabbed
     headers={headers}
     panes={panes}
@@ -22,6 +22,13 @@ initialState = {
     onActiveTabChange={(event) => {
       setState({ activeTabIndex: event });
     }}
+  />
+  <br /><br />
+  <div>Active Position not passing from props</div>
+  <br /><br />
+  <Tabbed
+    headers={headers}
+    panes={panes}
   />
 </div>
 ```

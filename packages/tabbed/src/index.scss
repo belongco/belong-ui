@@ -34,17 +34,14 @@
   }
   &__header {
     display: flex;
-    justify-content: center;
     margin: 10px;
     &-item {
       width: fit-content;
       cursor: pointer;
       font-size: 14px;
-      font-weight: bold;
       margin: 0 15px;
       padding-bottom: 8px;
       border-bottom: 2px solid transparent;
-      text-transform: capitalize;
       &__active {
         border-bottom: 2px solid $blue-11;
         color: $blue-11;

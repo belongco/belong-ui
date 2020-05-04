@@ -12,7 +12,6 @@ initialState = {
   <div>
     <Modal
       isOpen={state.isModalWithCloseButton}
-      hideCloseIcon
       type="dark"
       title="Modal Title"
       position="center"
@@ -43,6 +42,7 @@ initialState = {
   <div>
     <Modal
       isOpen={state.isModalWithoutCloseButton}
+      hideCloseIcon
       type="light"
       position="center"
       onEscape={(event) => {
