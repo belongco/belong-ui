@@ -17,6 +17,7 @@ export default class TagsInput extends React.Component {
   static propTypes = {
     isOpen: PropTypes.bool,
     isDisabled: PropTypes.bool,
+    isExpanded: PropTypes.bool,
     className: PropTypes.string,
     onDropdownClose: PropTypes.func,
     tags: PropTypes.array,
@@ -33,6 +34,7 @@ export default class TagsInput extends React.Component {
   };
   static defaultProps = {
     isOpen: false,
+    isExpanded: false,
     renderTag: () => ('render tag'),
   }
   state = {
@@ -75,22 +77,26 @@ export default class TagsInput extends React.Component {
                 className="blng-tags-input__items"
                 onClick={() => { this.triggerFocusSuggestionsInput(); }}
               >
-                {_.map(this.props.tags, (item, index) => (
+                {!this.props.isExpanded && (
                   <React.Fragment>
-                    {!_.isEmpty(item) ? (
-                      <span
-                        className="blng-tags-input__tag"
-                        key={index}
-                      >
-                        {this.props.renderTag(item)}
-                        <i
-                          className="fa fa-times blng-tags-input__tag-remove"
-                          onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
-                        />
-                      </span>
-                    ) : null}
+                    {_.map(this.props.tags, (item, index) => (
+                      <React.Fragment>
+                        {!_.isEmpty(item) ? (
+                          <span
+                            className="blng-tags-input__tag"
+                            key={index}
+                          >
+                            {this.props.renderTag(item)}
+                            <i
+                              className="fa fa-times blng-tags-input__tag-remove"
+                              onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
+                            />
+                          </span>
+                        ) : null}
+                      </React.Fragment>
+                    ))}
                   </React.Fragment>
-                ))}
+                )}
                 <Suggestions.INPUT
                   value={this.props.searchValue}
                   onChange={(newValue) => {
@@ -106,12 +112,10 @@ export default class TagsInput extends React.Component {
                   }}
                   placeholder={this.props.searchPlaceholder}
                   onKeyDown={(event) => {
-                    if (event.keyCode === keyCodes.BACKSPACE) {
-                      if (_.isEmpty(this.props.searchValue)) {
-                        const index = this.props.tags.length - 1;
+                    if (!this.props.isExpanded && _.isEqual(event.keyCode, keyCodes.BACKSPACE) && _.isEmpty(this.props.searchValue)) {
+                      const index = this.props.tags.length - 1;
 
-                        this.props.OnRemoveTag(this.props.tags[index], index, { isBackspace: true });
-                      }
+                      this.props.OnRemoveTag(this.props.tags[index], index, { isBackspace: true });
                     }
                   }}
                 />
@@ -143,6 +147,26 @@ export default class TagsInput extends React.Component {
             />
           </Suggestions>
         </Popover>
+        {this.props.isExpanded && (
+          <div className="blng-tags-input__container">
+            {_.map(this.props.tags, (item, index) => (
+              <React.Fragment>
+                {!_.isEmpty(item) ? (
+                  <span
+                    className="blng-tags-input__tag"
+                    key={index}
+                  >
+                    {this.props.renderTag(item)}
+                    <i
+                      className="fa fa-times blng-tags-input__tag-remove"
+                      onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
+                    />
+                  </span>
+                ) : null}
+              </React.Fragment>
+            ))}
+          </div>
+        )}
       </div>
     );
   }
