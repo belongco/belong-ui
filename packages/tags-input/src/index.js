@@ -112,14 +112,10 @@ export default class TagsInput extends React.Component {
                   }}
                   placeholder={this.props.searchPlaceholder}
                   onKeyDown={(event) => {
-                    if (!this.props.isExpanded) {
-                      if (event.keyCode === keyCodes.BACKSPACE) {
-                        if (_.isEmpty(this.props.searchValue)) {
-                          const index = this.props.tags.length - 1;
+                    if (!this.props.isExpanded && _.isEqual(event.keyCode, keyCodes.BACKSPACE) && _.isEmpty(this.props.searchValue)) {
+                      const index = this.props.tags.length - 1;
 
-                          this.props.OnRemoveTag(this.props.tags[index], index, { isBackspace: true });
-                        }
-                      }
+                      this.props.OnRemoveTag(this.props.tags[index], index, { isBackspace: true });
                     }
                   }}
                 />
