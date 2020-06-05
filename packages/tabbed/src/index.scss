@@ -33,15 +33,18 @@
     }
   }
   &__header {
+    margin: 0 0 10px;
     display: flex;
-    margin: 10px;
+    justify-content: flex-start;
+    background: $white;
     &-item {
       width: fit-content;
       cursor: pointer;
       font-size: 14px;
-      margin: 0 15px;
-      padding-bottom: 8px;
+      margin: 0;
+      padding: 8px 15px;
       border-bottom: 2px solid transparent;
+      text-transform: initial;
       &__active {
         border-bottom: 2px solid $blue-11;
         color: $blue-11;
@@ -49,6 +52,8 @@
     }
   }
   &__content {
-    margin: 10px;
+    margin: 0;
+    flex-grow: 1;
+    background: $white;
   }
 }

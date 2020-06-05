@@ -4,12 +4,13 @@
   display: flex;
   width: fit-content;
   border-radius: 5px;
-  padding: 6px 8px;
+  padding: 3px 6px;
   cursor: default;
   background-color: $grey-18;
   color: $purple-11;
   font-weight: 600;
   align-items: center;
+  white-space: nowrap;
   &__warning {
     background-color: $yellow-2;
     color: $yellow-10;
@@ -27,7 +28,7 @@
     cursor: pointer;
   }
   &__icon {
-    font-size: 12px;
+    font-size: 10px;
     margin: 0 2px;
     &-placement {
       &_left {
@@ -39,7 +40,8 @@
     }
   }
   &__content {
-    font-size: 14px;
+    font-size: 10px;
+    font-weight: 500;
     margin: 0 2px;
   }
   &__hoverable {
