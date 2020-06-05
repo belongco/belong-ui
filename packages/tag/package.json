@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/tag",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "belong-ui: Tag Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
