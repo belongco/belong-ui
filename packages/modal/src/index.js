@@ -39,6 +39,8 @@ export default class Modal extends Component {
   componentWillReceiveProps(nextProps, preProps) {
     if (!_.isEqual(nextProps.isOpen, preProps.isOpen) && nextProps.isOpen) {
       document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
     }
   }
 
