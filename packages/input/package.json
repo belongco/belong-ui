@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/input",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "belong-ui: Input Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
