@@ -36,14 +36,6 @@ export default class Modal extends Component {
     document.addEventListener('click', this.onClick, false);
   }
 
-  componentWillReceiveProps(nextProps, preProps) {
-    if (!_.isEqual(nextProps.isOpen, preProps.isOpen) && nextProps.isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }
-
   componentWillUnmount() {
     document.removeEventListener('keydown', this.onEscape, false);
     document.removeEventListener('click', this.onClick, false);
@@ -51,7 +43,6 @@ export default class Modal extends Component {
 
   onEscape = (event) => {
     if (event.keyCode === keyCodes.ESCAPE) {
-      document.body.style.overflow = 'auto';
       this.props.onEscape(event);
     }
   }
@@ -60,14 +51,12 @@ export default class Modal extends Component {
     const element = document.getElementById('blng-modal__overflow');
 
     if (element === event.target) {
-      document.body.style.overflow = 'auto';
       this.props.onEscape(event);
     }
   }
 
   onClose = () => {
     if (_.isFunction(this.props.onClose)) {
-      document.body.style.overflow = 'auto';
       this.props.onClose();
     }
   }

@@ -1,12 +1,13 @@
 @import '../../../scss/index.scss';
 
 .blng-modal {
-  width: 100%;
   position: fixed;
   z-index: 10;
+  padding-top: 60px;
   left: 0;
-  top: 60px;
+  top: 0;
   bottom: 60px;
+  width: 100%;
   overflow: auto;
   transition: all 0.5s;
   &__closed {
