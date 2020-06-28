@@ -107,7 +107,9 @@ export default class SelectDropdown extends React.Component {
                     className="blng-select-dropdown__dropdown-item"
                     onClick={() => {
                       this.props.onSelect(item, index);
+                      this.setState({ isOpen: false });
                     }}
+                    key={index}
                   >
                     {this.props.renderItem(item, index)}
                   </div>
