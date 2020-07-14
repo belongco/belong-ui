@@ -18,9 +18,21 @@
   &:hover {
     cursor: pointer;
   }
-
-  &--size-small {
-    height: 30px;
+  &--size {
+    &-small {
+      height: 30px;
+    }
+    &-wide-small {
+      height: 30px;
+      padding: 0 20px;
+    }
+    &-wide-medium {
+      height: 34px;
+      padding: 0 20px;
+    }
+    &-medium {
+      height: 34px;
+    }
   }
 
   &--variant-text {

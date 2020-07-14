@@ -124,6 +124,38 @@
     </div>
   </div>
   <br /><br />
+  <p>Medium Button</p>
+  <br /><br />
+  <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+    <div>
+      <RevampedButton
+        variant="text"
+        onClick={() => { window.alert('Button Was Clicked'); }}
+        size="medium"
+      >
+        <span>Simple Text Button</span>
+      </RevampedButton>
+    </div>
+    <div>
+      <RevampedButton
+        variant="outlined"
+        onClick={() => { window.alert('Button Was Clicked'); }}
+        size="medium"
+      >
+        <span>Simple Outlined Button</span>
+      </RevampedButton>
+    </div>
+    <div>
+      <RevampedButton
+        variant="raised"
+        onClick={() => { window.alert('Button Was Clicked'); }}
+        size="medium"
+      >
+        <span>Simple Raised Button</span>
+      </RevampedButton>
+    </div>
+  </div>
+  <br /><br />
   <p>Small Button</p>
   <br /><br />
   <div style={{ display: 'flex', justifyContent: 'space-around' }}>

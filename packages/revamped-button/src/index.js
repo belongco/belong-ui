@@ -18,7 +18,7 @@ export default class RevampedButton extends React.Component {
       PropTypes.element,
       PropTypes.array,
     ]),
-    size: PropTypes.oneOf(['small']),
+    size: PropTypes.oneOf(['small', 'wide-small', 'medium', 'wide-medium']),
     variant: PropTypes.oneOf(['text', 'outlined', 'raised']),
     onClick: PropTypes.func,
     isDisabled: PropTypes.bool,
