@@ -48,6 +48,13 @@
   &:hover {
     cursor: pointer;
   }
+  .fa-check {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
   &--checked {
     background-color: $blue-6;
     border: solid 2px $blue-6;

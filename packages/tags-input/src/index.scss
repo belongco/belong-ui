@@ -46,6 +46,7 @@
   &__items {
     display: flex;
     flex-wrap: wrap;
+    cursor: text;
   }
   &__container {
     background-color: $white;
@@ -58,5 +59,7 @@
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
   }
 }
