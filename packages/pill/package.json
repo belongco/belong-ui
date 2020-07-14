@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/pill",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "description": "belong-ui: Pill Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
