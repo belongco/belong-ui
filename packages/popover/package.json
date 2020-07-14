@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/popover",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "belong-ui: Popover Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",

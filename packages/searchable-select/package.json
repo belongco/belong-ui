@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/searchable-select",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "belong-ui: Searchable Select Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
@@ -10,8 +10,8 @@
     "build": "webpack --config ../../webpack.lib.config.js --env.pkg=searchable-select"
   },
   "dependencies": {
-    "@belong-ui/popover": "^0.1.26",
-    "@belong-ui/suggestions": "^0.1.26",
+    "@belong-ui/popover": "^0.1.27",
+    "@belong-ui/suggestions": "^0.1.27",
     "classnames": "^2.2.5",
     "lodash": "^4.17.15",
     "prop-types": "^15.6.0",
