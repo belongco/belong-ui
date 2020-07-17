@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/revamped-button",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "description": "belong-ui: Basic Button Component",
   "main": "dist/index.min.js",
   "repository": "https://github.com/belongco/belong-ui",
