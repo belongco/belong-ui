@@ -1,6 +1,6 @@
 {
   "name": "@belong-ui/modal",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "belong-ui: Basic Modal Component",
   "main": "dist/index.min.js",
   "scripts": {
