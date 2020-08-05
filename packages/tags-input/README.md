@@ -61,6 +61,7 @@ initialState = {
     suggestions={state.filteredSuggestions}
     tags={state.selectedItem}
     renderTag={tag => tag}
+    isEditableTag={(tag) => { return !_.get(tag, 'readOnly', false); }}
     renderSuggestion={(suggestion) => (<span>{suggestion.name}</span>)}
     searchPlaceholder="To"
     messageIfNoSearchResults="No Search Result"

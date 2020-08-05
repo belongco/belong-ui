@@ -31,11 +31,13 @@ export default class TagsInput extends React.Component {
     onAddTag: PropTypes.func,
     OnRemoveTag: PropTypes.func,
     suggestions: PropTypes.object,
+    isEditableTag: PropTypes.func,
   };
   static defaultProps = {
     isOpen: false,
     isExpanded: false,
     renderTag: () => ('render tag'),
+    isEditableTag: () => (true),
   }
   state = {
     isOpen: this.props.isOpen,
@@ -87,10 +89,12 @@ export default class TagsInput extends React.Component {
                             key={index}
                           >
                             {this.props.renderTag(item)}
-                            <i
-                              className="fa fa-times blng-tags-input__tag-remove"
-                              onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
-                            />
+                            {this.props.isEditableTag(item) && (
+                              <i
+                                className="fa fa-times blng-tags-input__tag-remove"
+                                onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
+                              />
+                            )}
                           </span>
                         ) : null}
                       </React.Fragment>
@@ -157,10 +161,12 @@ export default class TagsInput extends React.Component {
                     key={index}
                   >
                     {this.props.renderTag(item)}
-                    <i
-                      className="fa fa-times blng-tags-input__tag-remove"
-                      onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
-                    />
+                    {this.props.isEditableTag(item) && (
+                      <i
+                        className="fa fa-times blng-tags-input__tag-remove"
+                        onClick={() => { this.props.OnRemoveTag(item, index, { isBackspace: false }); }}
+                      />
+                    )}
                   </span>
                 ) : null}
               </React.Fragment>
